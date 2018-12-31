@@ -1,0 +1,27 @@
+{
+   "entries" : [
+      {
+         "key" : "WINDEATER",
+         "name" : "research.WINDEATER.title",
+         "icons" : [
+            "flammpfeil.slashblade:slashbladenamed;1;0;{ModelName:\"zephyr/model\",TextureName: \"zephyr/tex\"}"
+         ],
+         "category" : "INFUSION",
+         "location" : [ -3, 4 ],
+         "parents" : [ "ELEMENTALTOOLS" ],
+         "stages" : [
+            {
+               "text" : "research.WINDEATER.text.stage.1",
+               "required_knowledge" : [ "THEORY;INFUSION;2", "THEORY;BASICS;2" ]
+            },
+            {
+               "text" : "research.WINDEATER.text.stage.2",
+               "recipes" : [
+                  "minecraft:flammpfeil.slashblade.named.windeater",
+                  "minecraft:flammpfeil.slashblade.named.zephyr"
+               ]
+            }
+         ]
+      }
+   ]
+}
