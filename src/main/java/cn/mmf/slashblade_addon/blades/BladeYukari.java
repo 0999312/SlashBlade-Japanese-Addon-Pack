@@ -71,10 +71,10 @@ public class BladeYukari {
 	    reqblade_yukari.addEnchantment(Enchantments.FIRE_ASPECT, 1);
 	    ItemSlashBlade.KillCount.set(reqtag_yukati, 1000);
 	    
-	    SlashBlade.addRecipe(nameyukari, new RecipeAwakeBlade(new ResourceLocation(nameyukari), yukari, reqblade_yukari, new Object[]{
+	    SlashBlade.addRecipe(nameyukari, new RecipeAwakeBlade(new ResourceLocation("flammpfeil.slashblade",nameyukari), yukari, reqblade_yukari, new Object[]{
 	    		"ISI", "SBS", "ISI", Character.valueOf('I'), ingot, Character.valueOf('S'), sphere, Character.valueOf('B'), reqblade_yukari 
 	    }));
-	    SlashBlade.addRecipe(nametboen, new RecipeAwakeBlade(new ResourceLocation(nametboen), tboen, reqblade_tboen, new Object[]{
+	    SlashBlade.addRecipe(nametboen, new RecipeAwakeBlade(new ResourceLocation("flammpfeil.slashblade",nametboen), tboen, reqblade_tboen, new Object[]{
 	    		"SSS", "SBS", "SSS", Character.valueOf('S'), soul, Character.valueOf('B'), reqblade_tboen  
 	    }));
 	}

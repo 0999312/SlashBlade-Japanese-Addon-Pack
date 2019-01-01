@@ -37,7 +37,7 @@ public class BladeWanderer {
 	public void InitRecipes(PostInitEvent event){
 	    ItemStack ingot = SlashBlade.findItemStack("flammpfeil.slashblade", SlashBlade.IngotBladeSoulStr, 1);
 		ItemStack reqiredBlade = SlashBlade.getCustomBlade("flammpfeil.slashblade.named.doutanuki");
-		SlashBlade.addRecipe(name, new ShapedOreRecipe(new ResourceLocation(name), SlashBlade.getCustomBlade(name), new Object[]{
+		SlashBlade.addRecipe(name, new ShapedOreRecipe(new ResourceLocation("flammpfeil.slashblade",name), SlashBlade.getCustomBlade(name), new Object[]{
 				 "  I", "QI ", "BC ", Character.valueOf('B'), reqiredBlade , Character.valueOf('Q'),"gemQuartz", Character.valueOf('I'), ingot, Character.valueOf('C'), new ItemStack(Items.CLOCK) 
 		}));
 	}

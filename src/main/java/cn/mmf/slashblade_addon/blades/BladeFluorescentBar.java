@@ -34,7 +34,7 @@ public class BladeFluorescentBar {
 	@SubscribeEvent
 	public void InitRecipes(PostInitEvent event){
 	    ItemStack soul = SlashBlade.findItemStack("flammpfeil.slashblade", SlashBlade.ProudSoulStr, 1);
-		SlashBlade.addRecipe(name, new ShapedOreRecipe(new ResourceLocation(name), SlashBlade.getCustomBlade(name), new Object[]{
+		SlashBlade.addRecipe(name, new ShapedOreRecipe(new ResourceLocation("flammpfeil.slashblade",name), SlashBlade.getCustomBlade(name), new Object[]{
 				 " PS", "PGP", "SP ", Character.valueOf('P'),"paper", Character.valueOf('G'), "blockGlass", Character.valueOf('S'), soul 
 		}));
 	}

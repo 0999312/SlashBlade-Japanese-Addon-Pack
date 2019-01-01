@@ -44,13 +44,13 @@ public class BladeMURASAMA {
 	public void InitRecipes(PostInitEvent event){
 		 ItemStack soul = SlashBlade.findItemStack("flammpfeil.slashblade", SlashBlade.ProudSoulStr, 1);
 		ItemStack sphere = SlashBlade.findItemStack("flammpfeil.slashblade", SlashBlade.SphereBladeSoulStr, 1);
-		SlashBlade.addRecipe("FPNCore", new ShapedOreRecipe(new ResourceLocation("FPNCore"), ItemLoader.FPNCore, new Object[]{
+		SlashBlade.addRecipe("FPNCore", new ShapedOreRecipe(new ResourceLocation("flammpfeil.slashblade","FPNCore"), ItemLoader.FPNCore, new Object[]{
 				"SQS", "QNQ", "SQS", 
 			      Character.valueOf('S'), sphere, 
 			      Character.valueOf('Q'), "blockQuartz", 
 			      Character.valueOf('N'), "netherStar"
 		}));
-	    SlashBlade.addRecipe(name, new RecipeAwakeBladeRF(new ResourceLocation(name), SlashBlade.getCustomBlade(name),SlashBlade.getCustomBlade("flammpfeil.slashblade.named.muramasa"),new Object[]{
+	    SlashBlade.addRecipe(name, new RecipeAwakeBladeRF(new ResourceLocation("flammpfeil.slashblade",name), SlashBlade.getCustomBlade(name),SlashBlade.getCustomBlade("flammpfeil.slashblade.named.muramasa"),new Object[]{
 	    		 " RI", "RBG", "SL ", 
 	    	      Character.valueOf('I'), "ingotIron", 
 	    	      Character.valueOf('R'), "blockRedstone", 
@@ -59,7 +59,7 @@ public class BladeMURASAMA {
 	    	      Character.valueOf('G'), "gunpowder", 
 	    	      Character.valueOf('S'), ItemLoader.FPNCore 
 				}));
-		SlashBlade.addRecipe("murasama_restart", new RecipeRestartUserRF(new ResourceLocation("murasama_restart"), SlashBlade.getCustomBlade(name),SlashBlade.getCustomBlade(name),new Object[]{
+		SlashBlade.addRecipe("murasama_restart", new RecipeRestartUserRF(new ResourceLocation("flammpfeil.slashblade","murasama_restart"), SlashBlade.getCustomBlade(name),SlashBlade.getCustomBlade(name),new Object[]{
 				"S", "B", "I", 
 			      Character.valueOf('I'), "blockQuartz", 
 			      Character.valueOf('B'), SlashBlade.getCustomBlade(name), 

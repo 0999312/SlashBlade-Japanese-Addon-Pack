@@ -38,7 +38,7 @@ public class BladeWandererRF {
 	@SubscribeEvent
 	public void InitRecipes(PostInitEvent event){
 	    ItemStack soul = SlashBlade.findItemStack("flammpfeil.slashblade", SlashBlade.ProudSoulStr, 1);
-	    SlashBlade.addRecipe(name, new RecipeAwakeBladeRF(new ResourceLocation(name), SlashBlade.getCustomBlade(name),SlashBlade.getCustomBlade("flammpfeil.slashblade.named.wanderer"),new Object[]{
+	    SlashBlade.addRecipe(name, new RecipeAwakeBladeRF(new ResourceLocation("flammpfeil.slashblade",name), SlashBlade.getCustomBlade(name),SlashBlade.getCustomBlade("flammpfeil.slashblade.named.wanderer"),new Object[]{
 	    		"  I","QI ","BC ",
 	    		Character.valueOf('B'), SlashBlade.getCustomBlade("flammpfeil.slashblade.named.wanderer"),
 	    		Character.valueOf('Q'), "gemQuartz",
@@ -48,7 +48,7 @@ public class BladeWandererRF {
 		SlashBlade.addRecipe("wanderer_restart", new RecipeRestartUserRF(new ResourceLocation("wanderer_restart"), SlashBlade.getCustomBlade(name),SlashBlade.getCustomBlade(name),new Object[]{
 				"S", "B", "I", 
 			      Character.valueOf('I'), "blockQuartz", 
-			      Character.valueOf('B'), SlashBlade.getCustomBlade(name), 
+			      Character.valueOf('B'), SlashBlade.getCustomBlade("flammpfeil.slashblade",name), 
 			      Character.valueOf('S'), soul
 				}));
 	}

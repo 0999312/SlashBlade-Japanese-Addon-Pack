@@ -71,7 +71,7 @@ public class BladeDarkRaven {
 	      SlashBlade.mainConfiguration.save();
 	    }
 	    DropEventHandler.registerEntityDrop(new ResourceLocation("twilightforest", "raven"), fact, darkraven);
-	    SlashBlade.addRecipe(namesc, new RecipeAwakeBlade(new ResourceLocation(namesc), snowcrow, doutanuki, new Object[] { " FQ", "SQ ", "B  ", Character.valueOf('Q'),"blockQuartz", Character.valueOf('F'), new ItemStack(Items.FEATHER), Character.valueOf('S'), new ItemStack(Items.SNOWBALL), Character.valueOf('B'), doutanuki 
+	    SlashBlade.addRecipe(namesc, new RecipeAwakeBlade(new ResourceLocation("flammpfeil.slashblade",namesc), snowcrow, doutanuki, new Object[] { " FQ", "SQ ", "B  ", Character.valueOf('Q'),"blockQuartz", Character.valueOf('F'), new ItemStack(Items.FEATHER), Character.valueOf('S'), new ItemStack(Items.SNOWBALL), Character.valueOf('B'), doutanuki 
 	    		}));
 	}
 	

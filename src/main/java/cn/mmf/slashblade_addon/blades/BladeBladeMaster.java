@@ -95,13 +95,13 @@ public class BladeBladeMaster {
 	    ItemStack reqblade_3 =reqiredBlade_base.copy();
 	    reqblade_3.addEnchantment(Enchantments.THORNS, 1);
 	    
-		SlashBlade.addRecipe(namegreenmist, new RecipeAwakeBlade(new ResourceLocation(namegreenmist), SlashBlade.getCustomBlade(namegreenmist),reqblade_1, new Object[]{
+		SlashBlade.addRecipe(namegreenmist, new RecipeAwakeBlade(new ResourceLocation("flammpfeil.slashblade",namegreenmist), SlashBlade.getCustomBlade(namegreenmist),reqblade_1, new Object[]{
 				 "SRE", "RE ", "BGC", Character.valueOf('B'), reqblade_1, Character.valueOf('E'),"blockEmerald", Character.valueOf('R'),"blockRedstone", Character.valueOf('G'),"blockGold", Character.valueOf('C'), "gemQuartz", Character.valueOf('S'), sphere 
 		}));
-		SlashBlade.addRecipe(nameaquablaze, new RecipeAwakeBlade(new ResourceLocation(nameaquablaze), SlashBlade.getCustomBlade(nameaquablaze),reqblade_2, new Object[]{
+		SlashBlade.addRecipe(nameaquablaze, new RecipeAwakeBlade(new ResourceLocation("flammpfeil.slashblade",nameaquablaze), SlashBlade.getCustomBlade(nameaquablaze),reqblade_2, new Object[]{
 				"SRW", "RL ", "BGC", Character.valueOf('B'), reqblade_2, Character.valueOf('W'), new ItemStack(Items.WATER_BUCKET), Character.valueOf('L'), new ItemStack(Items.LAVA_BUCKET), Character.valueOf('R'),"blockRedstone", Character.valueOf('G'),"blockGold", Character.valueOf('C'), "gemQuartz", Character.valueOf('S'), sphere 
 		}));
-		SlashBlade.addRecipe(namemoonlightcherry, new RecipeAwakeBlade(new ResourceLocation(namemoonlightcherry), SlashBlade.getCustomBlade(namemoonlightcherry),reqblade_3, new Object[]{
+		SlashBlade.addRecipe(namemoonlightcherry, new RecipeAwakeBlade(new ResourceLocation("flammpfeil.slashblade",namemoonlightcherry), SlashBlade.getCustomBlade(namemoonlightcherry),reqblade_3, new Object[]{
 				 "SRW", "RL ", "BGC", Character.valueOf('B'), reqblade_3, Character.valueOf('W'),"blockQuartz", Character.valueOf('L'),"glowstone", Character.valueOf('R'), "blockRedstone", Character.valueOf('G'),"blockGold", Character.valueOf('C'), "gemQuartz", Character.valueOf('S'), sphere 
 		}));
 	}

@@ -41,7 +41,7 @@ public class BladeLaemmle {
 	    ItemStack soul = SlashBlade.findItemStack("flammpfeil.slashblade", SlashBlade.ProudSoulStr, 1);
 	    ItemStack required = SlashBlade.getCustomBlade("flammpfeil.slashblade.named.muramasa");
 		ItemStack potion = PotionUtils.addPotionToItemStack(new ItemStack(Items.POTIONITEM),PotionTypes.STRONG_STRENGTH);
-		SlashBlade.addRecipe(name, new RecipeAwakeBlade(new ResourceLocation(name), SlashBlade.getCustomBlade(name),required, new Object[]{
+		SlashBlade.addRecipe(name, new RecipeAwakeBlade(new ResourceLocation("flammpfeil.slashblade",name), SlashBlade.getCustomBlade(name),required, new Object[]{
 				 "XGO", "GBG", "QGX", Character.valueOf('X'), potion, Character.valueOf('G'),"ingotGold", Character.valueOf('O'), "obsidian", Character.valueOf('Q'),"blockQuartz", Character.valueOf('B'), required 
 		}));
 	}

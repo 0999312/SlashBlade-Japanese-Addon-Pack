@@ -72,7 +72,7 @@ public class BladeZephyr {
 		ItemStack ReqBlade = SlashBlade.getCustomBlade(namewindeater);
 	    NBTTagCompound tag = ItemSlashBlade.getItemTagCompound(ReqBlade);
 	    ItemSlashBlade.KillCount.set(tag, Integer.valueOf(100));
-	    SlashBlade.addRecipe(name, new RecipeAwakeBlade(new ResourceLocation(name), SlashBlade.getCustomBlade(name), ReqBlade, new Object[]{
+	    SlashBlade.addRecipe(name, new RecipeAwakeBlade(new ResourceLocation("flammpfeil.slashblade",name), SlashBlade.getCustomBlade(name), ReqBlade, new Object[]{
 	    		" X ", "XBX", " X ", Character.valueOf('X'), soul, Character.valueOf('B'), ReqBlade
 	    }));
 	}

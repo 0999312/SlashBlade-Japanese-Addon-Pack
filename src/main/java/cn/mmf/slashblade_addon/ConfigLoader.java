@@ -32,21 +32,21 @@ public class ConfigLoader {
         logger = event.getModLog();
         config = new Configuration(event.getSuggestedConfigurationFile());
         
-        switch_Nihil = config.getBoolean("Switch Nihil Addon", Configuration.CATEGORY_GENERAL, true, I18n.format("config.switch.nihil.text"));
-        switch_DarkRaven = config.getBoolean("Switch DarkRaven Addon", Configuration.CATEGORY_GENERAL, true, I18n.format("config.switch.darkraven.text"));
-        switch_WA = config.getBoolean("Switch WA Addon", Configuration.CATEGORY_GENERAL, true, I18n.format("config.switch.WA.text"));
-        switch_Toyako = config.getBoolean("Switch Toyako Addon", Configuration.CATEGORY_GENERAL, true, I18n.format("config.switch.toyako.text"));
-        switch_FluorescentBar = config.getBoolean("Switch FluorescentBar Addon", Configuration.CATEGORY_GENERAL, true, I18n.format("config.switch.fluorescentbar.text"));
-        switch_Yukari = config.getBoolean("Switch Yukari Addon", Configuration.CATEGORY_GENERAL, true, I18n.format("config.switch.yukari.text"));
-        switch_Kamuy = config.getBoolean("Switch Kamuy Addon", Configuration.CATEGORY_GENERAL, true, I18n.format("config.switch.kamuy.text"));
-        switch_Kirisaya = config.getBoolean("Switch Kirisaya Addon", Configuration.CATEGORY_GENERAL, true, I18n.format("config.switch.kirisaya.text"));
-        switch_FrostWolf = config.getBoolean("Switch FrostWolf Addon", Configuration.CATEGORY_GENERAL, true, I18n.format("config.switch.frostwolf.text"));
-        switch_Laemmle = config.getBoolean("Switch Laemmle Addon", Configuration.CATEGORY_GENERAL, true, I18n.format("config.switch.laemmle.text"));
-        switch_BladeMaster = config.getBoolean("Switch BladeMaster Addon", Configuration.CATEGORY_GENERAL, true, I18n.format("config.switch.blademaster.text"));
-        switch_MURASAMA = config.getBoolean("Switch MURASAMA Addon", Configuration.CATEGORY_GENERAL, true, I18n.format("config.switch.MURASAMA.text"));
-        switch_Terra = config.getBoolean("Switch TerraBlade Addon", Configuration.CATEGORY_GENERAL, true, I18n.format("config.switch.terra.text"));
-        switch_Wanderer = config.getBoolean("Switch Wanderer Addon", Configuration.CATEGORY_GENERAL, true, I18n.format("config.switch.wanderer.text"));
-        switch_Zephyr = config.getBoolean("Switch BladeofZephyr Addon", Configuration.CATEGORY_GENERAL, true, I18n.format("config.switch.zephyr.text"));
+        switch_Nihil = config.getBoolean("Switch Nihil Addon", Configuration.CATEGORY_GENERAL, true,"");
+        switch_DarkRaven = config.getBoolean("Switch DarkRaven Addon", Configuration.CATEGORY_GENERAL, true,"");
+        switch_WA = config.getBoolean("Switch WA Addon", Configuration.CATEGORY_GENERAL, true,"");
+        switch_Toyako = config.getBoolean("Switch Toyako Addon", Configuration.CATEGORY_GENERAL, true,"");
+        switch_FluorescentBar = config.getBoolean("Switch FluorescentBar Addon", Configuration.CATEGORY_GENERAL, true,"");
+        switch_Yukari = config.getBoolean("Switch Yukari Addon", Configuration.CATEGORY_GENERAL, true,"");
+        switch_Kamuy = config.getBoolean("Switch Kamuy Addon", Configuration.CATEGORY_GENERAL, true,"");
+        switch_Kirisaya = config.getBoolean("Switch Kirisaya Addon", Configuration.CATEGORY_GENERAL,true,"");
+        switch_FrostWolf = config.getBoolean("Switch FrostWolf Addon", Configuration.CATEGORY_GENERAL, true, "");
+        switch_Laemmle = config.getBoolean("Switch Laemmle Addon", Configuration.CATEGORY_GENERAL, true,"");
+        switch_BladeMaster = config.getBoolean("Switch BladeMaster Addon", Configuration.CATEGORY_GENERAL, true, "");
+        switch_MURASAMA = config.getBoolean("Switch MURASAMA Addon", Configuration.CATEGORY_GENERAL, true,"");
+        switch_Terra = config.getBoolean("Switch TerraBlade Addon", Configuration.CATEGORY_GENERAL, true, "");
+        switch_Wanderer = config.getBoolean("Switch Wanderer Addon", Configuration.CATEGORY_GENERAL, true, "");
+        switch_Zephyr = config.getBoolean("Switch BladeofZephyr Addon", Configuration.CATEGORY_GENERAL, true, "");
         
         config.load();
         load();

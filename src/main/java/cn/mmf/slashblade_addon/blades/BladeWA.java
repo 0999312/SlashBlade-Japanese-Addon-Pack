@@ -81,16 +81,16 @@ public class BladeWA {
 	public void InitRecipes(PostInitEvent event){
 	    ItemStack ingot = SlashBlade.findItemStack("flammpfeil.slashblade", SlashBlade.IngotBladeSoulStr, 1);
 	    ItemStack soul = SlashBlade.findItemStack("flammpfeil.slashblade", SlashBlade.ProudSoulStr, 1);
-		SlashBlade.addRecipe(namekatana+"_noSheath", new ShapedOreRecipe(new ResourceLocation(namekatana+"_noSheath"), SlashBlade.getCustomBlade(namekatana+"_noSheath"), new Object[]{
+		SlashBlade.addRecipe(namekatana+"_noSheath", new ShapedOreRecipe(new ResourceLocation("flammpfeil.slashblade",namekatana+"_noSheath"), SlashBlade.getCustomBlade(namekatana+"_noSheath"), new Object[]{
 				"  I"," I ","S  ",'S',"stickWood",'I',ingot
 		}));
-		SlashBlade.addRecipe(nametachi+"_noSheath", new ShapedOreRecipe(new ResourceLocation(nametachi+"_noSheath"), SlashBlade.getCustomBlade(nametachi+"_noSheath"), new Object[]{
+		SlashBlade.addRecipe(nametachi+"_noSheath", new ShapedOreRecipe(new ResourceLocation("flammpfeil.slashblade",nametachi+"_noSheath"), SlashBlade.getCustomBlade(nametachi+"_noSheath"), new Object[]{
 				" II","II ","S  ",'S',"stickWood",'I',ingot
 		}));
-	    SlashBlade.addRecipe(namekatana, new RecipeAwakeBlade(new ResourceLocation(namekatana), SlashBlade.getCustomBlade(namekatana),SlashBlade.getCustomBlade(namekatana+"_noSheath"),new Object[]{
+	    SlashBlade.addRecipe(namekatana, new RecipeAwakeBlade(new ResourceLocation("flammpfeil.slashblade",namekatana), SlashBlade.getCustomBlade(namekatana),SlashBlade.getCustomBlade(namekatana+"_noSheath"),new Object[]{
 				"  S", " W ", "B  ", Character.valueOf('S'), soul, Character.valueOf('B'), SlashBlade.getCustomBlade(namekatana+"_noSheath"),Character.valueOf('W'), new ItemStack(SlashBlade.wrapBlade)
 				}));
-		SlashBlade.addRecipe(nametachi, new RecipeAwakeBlade(new ResourceLocation(nametachi), SlashBlade.getCustomBlade(nametachi),SlashBlade.getCustomBlade(nametachi+"_noSheath"),new Object[]{
+		SlashBlade.addRecipe(nametachi, new RecipeAwakeBlade(new ResourceLocation("flammpfeil.slashblade",nametachi), SlashBlade.getCustomBlade(nametachi),SlashBlade.getCustomBlade(nametachi+"_noSheath"),new Object[]{
 				"  S", " W ", "B  ", Character.valueOf('S'), soul, Character.valueOf('B'), SlashBlade.getCustomBlade(nametachi+"_noSheath"),Character.valueOf('W'), new ItemStack(SlashBlade.wrapBlade)
 				}));
 	}

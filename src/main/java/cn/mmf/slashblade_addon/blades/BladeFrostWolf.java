@@ -55,10 +55,10 @@ public class BladeFrostWolf {
 	@SubscribeEvent
 	public void InitRecipes(PostInitEvent event){
 	    ItemStack sphere = SlashBlade.findItemStack("flammpfeil.slashblade", SlashBlade.SphereBladeSoulStr, 1);
-		SlashBlade.addRecipe(nameA, new RecipeAwakeBlade(new ResourceLocation(nameA), SlashBlade.getCustomBlade(nameA),SlashBlade.getCustomBlade("flammpfeil.slashblade.named.doutanuki"),new Object[]{
+		SlashBlade.addRecipe(nameA, new RecipeAwakeBlade(new ResourceLocation("flammpfeil.slashblade",nameA), SlashBlade.getCustomBlade(nameA),SlashBlade.getCustomBlade("flammpfeil.slashblade.named.doutanuki"),new Object[]{
 				" IL", "CS ", "BQ ", Character.valueOf('L'),"dyeBlue", Character.valueOf('S'), sphere, Character.valueOf('B'), SlashBlade.getCustomBlade("flammpfeil.slashblade.named.doutanuki"), Character.valueOf('Q'),"gemQuartz", Character.valueOf('I'), new ItemStack(Blocks.ICE), Character.valueOf('C'), new ItemStack(Blocks.SNOW)
 				}));
-		SlashBlade.addRecipe(nameB, new RecipeAwakeBlade(new ResourceLocation(nameB), SlashBlade.getCustomBlade(nameB),SlashBlade.getCustomBlade("flammpfeil.slashblade.named.muramasa"),new Object[]{
+		SlashBlade.addRecipe(nameB, new RecipeAwakeBlade(new ResourceLocation("flammpfeil.slashblade",nameB), SlashBlade.getCustomBlade(nameB),SlashBlade.getCustomBlade("flammpfeil.slashblade.named.muramasa"),new Object[]{
 				" IL", "CS ", "BQ ", Character.valueOf('L'),"dyeBlue", Character.valueOf('S'), sphere, Character.valueOf('B'), SlashBlade.getCustomBlade("flammpfeil.slashblade.named.muramasa"), Character.valueOf('Q'),"gemQuartz", Character.valueOf('I'), new ItemStack(Blocks.ICE), Character.valueOf('C'), new ItemStack(Blocks.SNOW)
 				}));
 	}

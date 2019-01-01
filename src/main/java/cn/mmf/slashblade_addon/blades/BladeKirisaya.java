@@ -54,7 +54,7 @@ public class BladeKirisaya {
 	    reqiredBlade.addEnchantment(Enchantments.SHARPNESS, 3);
 	    reqiredBlade.addEnchantment(Enchantments.POWER, 3);
 	    
-	    SlashBlade.addRecipe(name, new RecipeKirisaya(new ResourceLocation(name), blade, reqiredBlade, sphere, new Object[]{
+	    SlashBlade.addRecipe(name, new RecipeKirisaya(new ResourceLocation("flammpfeil.slashblade",name), blade, reqiredBlade, sphere, new Object[]{
 	    		"DGD", "ZBZ", "GDG", Character.valueOf('G'), new ItemStack(Items.GOLDEN_APPLE, 1, 1), Character.valueOf('D'), new ItemStack(Items.RECORD_11), Character.valueOf('B'), reqiredBlade, Character.valueOf('Z'), sphere 
 	    }));
 	    
