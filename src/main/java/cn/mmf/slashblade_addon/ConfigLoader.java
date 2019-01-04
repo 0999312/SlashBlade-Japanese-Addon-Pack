@@ -2,7 +2,6 @@ package cn.mmf.slashblade_addon;
 
 import org.apache.logging.log4j.Logger;
 
-import net.minecraft.client.resources.I18n;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
@@ -26,7 +25,8 @@ public class ConfigLoader {
     public static boolean switch_Terra;
     public static boolean switch_Wanderer;
     public static boolean switch_Zephyr;
-
+    public static boolean switch_CS2;
+    public static boolean switch_Bamboo;
     public ConfigLoader(FMLPreInitializationEvent event)
     {
         logger = event.getModLog();
@@ -47,6 +47,8 @@ public class ConfigLoader {
         switch_Terra = config.getBoolean("Switch TerraBlade Addon", Configuration.CATEGORY_GENERAL, true, "");
         switch_Wanderer = config.getBoolean("Switch Wanderer Addon", Configuration.CATEGORY_GENERAL, true, "");
         switch_Zephyr = config.getBoolean("Switch BladeofZephyr Addon", Configuration.CATEGORY_GENERAL, true, "");
+        switch_CS2 = config.getBoolean("Switch CS2 Template Addon", Configuration.CATEGORY_GENERAL, true, "");
+        switch_Bamboo = config.getBoolean("Switch Bamboo Compat Addon", Configuration.CATEGORY_GENERAL, true,"");
         
         config.load();
         load();

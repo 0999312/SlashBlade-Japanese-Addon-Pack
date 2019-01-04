@@ -15,7 +15,6 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.potion.PotionUtils;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.oredict.ShapedOreRecipe;
 
 public class BladeLaemmle {
 	public static final String name = "flammpfeil.slashblade.named.laemmle";
@@ -38,7 +37,6 @@ public class BladeLaemmle {
 	}
 	@SubscribeEvent
 	public void InitRecipes(PostInitEvent event){
-	    ItemStack soul = SlashBlade.findItemStack("flammpfeil.slashblade", SlashBlade.ProudSoulStr, 1);
 	    ItemStack required = SlashBlade.getCustomBlade("flammpfeil.slashblade.named.muramasa");
 		ItemStack potion = PotionUtils.addPotionToItemStack(new ItemStack(Items.POTIONITEM),PotionTypes.STRONG_STRENGTH);
 		SlashBlade.addRecipe(name, new RecipeAwakeBlade(new ResourceLocation("flammpfeil.slashblade",name), SlashBlade.getCustomBlade(name),required, new Object[]{

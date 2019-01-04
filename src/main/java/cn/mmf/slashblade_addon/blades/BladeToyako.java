@@ -43,6 +43,7 @@ public class BladeToyako {
 	}
 	@SubscribeEvent
 	public void registRecipe(PostInitEvent event){
+		@SuppressWarnings("deprecation")
 		VillagerProfession prof = VillagerRegistry.getById(3);
 		VillagerCareer career = new VillagerCareer(prof, "weapon2");
 		career

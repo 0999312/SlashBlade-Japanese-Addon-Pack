@@ -6,9 +6,7 @@ import mods.flammpfeil.slashblade.SlashBlade;
 import mods.flammpfeil.slashblade.item.ItemSlashBlade;
 import mods.flammpfeil.slashblade.named.event.LoadEvent.InitEvent;
 import mods.flammpfeil.slashblade.named.event.LoadEvent.PostInitEvent;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -28,7 +26,7 @@ public class BladeWA {
 	        ItemSlashBlade.setBaseAttackModifier(tag, 3F);
 	        ItemSlashBlade.TextureName.set(tag, "wa/waA");
 	        ItemSlashBlade.ModelName.set(tag, "wa/model");
-	        
+	       
 	        SlashBlade.registerCustomItemStack(namekatana, customblade);
 	        ItemSlashBladeNamed.NamedBlades.add(namekatana);
 	}
@@ -58,7 +56,7 @@ public class BladeWA {
 	        ItemSlashBlade.TextureName.set(tag, "wa/waA");
 	        ItemSlashBlade.ModelName.set(tag, "named/muramasa/muramasa");
 	        ItemSlashBlade.IsNoScabbard.set(tag, true);
-	        
+	        ItemSlashBlade.IsDestructable.set(tag, true);
 	        SlashBlade.registerCustomItemStack(namekatana+"_noSheath", customblade);
 	        ItemSlashBladeNamed.NamedBlades.add(namekatana+"_noSheath");
 	}
@@ -73,7 +71,8 @@ public class BladeWA {
 	        ItemSlashBlade.TextureName.set(tag, "wa/waB");
 	        ItemSlashBlade.ModelName.set(tag, "named/muramasa/muramasa");
 	        ItemSlashBlade.IsNoScabbard.set(tag, true);
-	        
+	        ItemSlashBlade.IsDestructable.set(tag, true);
+
 	        SlashBlade.registerCustomItemStack(nametachi+"_noSheath", customblade);
 	        ItemSlashBladeNamed.NamedBlades.add(nametachi+"_noSheath");
 	}

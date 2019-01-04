@@ -66,7 +66,6 @@ public class BladeYukari {
 	    ItemStack reqblade_tboen = new ItemStack(SlashBlade.bladeWhiteSheath);
 	    
 	    NBTTagCompound reqtag_yukati = ItemSlashBlade.getItemTagCompound(reqblade_yukari);
-	    NBTTagCompound reqtag_tboen = ItemSlashBlade.getItemTagCompound(reqblade_tboen);
 	    
 	    reqblade_yukari.addEnchantment(Enchantments.FIRE_ASPECT, 1);
 	    ItemSlashBlade.KillCount.set(reqtag_yukati, 1000);

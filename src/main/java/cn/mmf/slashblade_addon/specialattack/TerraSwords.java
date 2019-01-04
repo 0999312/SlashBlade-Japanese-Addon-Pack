@@ -2,15 +2,10 @@ package cn.mmf.slashblade_addon.specialattack;
 
 import java.util.List;
 import mods.flammpfeil.slashblade.SlashBlade;
-import mods.flammpfeil.slashblade.TagPropertyAccessor.TagPropertyFloat;
-import mods.flammpfeil.slashblade.TagPropertyAccessor.TagPropertyInteger;
-import mods.flammpfeil.slashblade.TagPropertyAccessor.TagPropertyIntegerWithRange;
 import mods.flammpfeil.slashblade.ability.StylishRankManager;
-import mods.flammpfeil.slashblade.ability.StylishRankManager.AttackTypes;
 import mods.flammpfeil.slashblade.entity.EntityStormSwords;
 import mods.flammpfeil.slashblade.entity.selector.EntitySelectorAttackable;
 import mods.flammpfeil.slashblade.item.ItemSlashBlade;
-import mods.flammpfeil.slashblade.item.ItemSlashBlade.ComboSequence;
 import mods.flammpfeil.slashblade.specialattack.SpecialAttackBase;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
@@ -60,7 +55,7 @@ public class TerraSwords
         ItemSlashBlade.setComboSequence(tag, ItemSlashBlade.ComboSequence.SlashDim);
         
         int cost = -40;
-        if (!ItemSlashBlade.ProudSoul.tryAdd(tag, Integer.valueOf(-40), false)) {
+        if (!ItemSlashBlade.ProudSoul.tryAdd(tag, cost, false)) {
           stack.damageItem(10, player);
         }
         StylishRankManager.setNextAttackType(player, StylishRankManager.AttackTypes.PhantomSword);

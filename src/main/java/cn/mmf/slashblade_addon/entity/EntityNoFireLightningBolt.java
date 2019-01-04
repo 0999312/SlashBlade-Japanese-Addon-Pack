@@ -5,15 +5,12 @@ import com.google.common.base.Predicate;
 import cn.mmf.slashblade_addon.ability.EnderTeleportCanceller;
 
 import java.util.List;
-import java.util.Random;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.effect.EntityLightningBolt;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
-import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.AxisAlignedBB;
-import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 import net.minecraftforge.event.ForgeEventFactory;
 

@@ -1,15 +1,9 @@
 package cn.mmf.slashblade_addon;
 
-import java.util.Random;
-
-import javax.annotation.Nonnull;
-
 import cn.mmf.slashblade_addon.entity.EntityLoader;
 import cn.mmf.slashblade_addon.item.ItemLoader;
 import cn.mmf.slashblade_addon.specialeffect.SELoader;
 import mods.flammpfeil.slashblade.SlashBlade;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;

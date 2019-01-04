@@ -1,6 +1,8 @@
 package cn.mmf.slashblade_addon;
 
+import cn.mmf.slashblade_addon.blades.BladeBamboo;
 import cn.mmf.slashblade_addon.blades.BladeBladeMaster;
+import cn.mmf.slashblade_addon.blades.BladeCS2Template;
 import cn.mmf.slashblade_addon.blades.BladeDarkRaven;
 import cn.mmf.slashblade_addon.blades.BladeFluorescentBar;
 import cn.mmf.slashblade_addon.blades.BladeFrostWolf;
@@ -48,6 +50,8 @@ public class BladeLoader {
 		SlashBlade.InitEventBus.register(new BladeLaemmle());
 		if(ConfigLoader.switch_BladeMaster)
 		SlashBlade.InitEventBus.register(new BladeBladeMaster());
+		if(ConfigLoader.switch_CS2)
+		SlashBlade.InitEventBus.register(new BladeCS2Template());
 		if(Loader.isModLoaded(CoFHCore.MOD_ID)){
 		if(ConfigLoader.switch_MURASAMA)
 		SlashBlade.InitEventBus.register(new BladeMURASAMA());
@@ -63,6 +67,9 @@ public class BladeLoader {
 			SlashBlade.InitEventBus.register(new BladeWandererRF());
 			}
 		}
+		if(ConfigLoader.switch_Bamboo)
+		SlashBlade.InitEventBus.register(new BladeBamboo());
+		
 		if(Loader.isModLoaded(Thaumcraft.MODID)){
 		if(ConfigLoader.switch_Zephyr)
 		SlashBlade.InitEventBus.register(new BladeZephyr());}

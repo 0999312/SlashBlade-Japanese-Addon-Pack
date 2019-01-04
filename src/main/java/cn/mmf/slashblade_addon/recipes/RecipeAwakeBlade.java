@@ -19,7 +19,8 @@ public class RecipeAwakeBlade extends mods.flammpfeil.slashblade.RecipeAwakeBlad
 		super(loc, result, requiredStateBlade, recipe);
 		
 	}
-    int tagValueCompare1(TagPropertyAccessor access, NBTTagCompound reqTag, NBTTagCompound srcTag){
+    @SuppressWarnings("unchecked")
+	int tagValueCompare1(TagPropertyAccessor<?> access, NBTTagCompound reqTag, NBTTagCompound srcTag){
         return access.get(reqTag).compareTo(access.get(srcTag));
     }
     @Override

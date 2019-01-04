@@ -1,7 +1,6 @@
 package cn.mmf.slashblade_addon.blades;
 
 import cn.mmf.slashblade_addon.item.ItemLoader;
-import cn.mmf.slashblade_addon.recipes.RecipeAwakeBlade;
 import cn.mmf.slashblade_addon.recipes.RecipeAwakeBladeRF;
 import cn.mmf.slashblade_addon.recipes.RecipeRestartUserRF;
 import mods.flammpfeil.slashblade.ItemSlashBladeNamed;
@@ -10,7 +9,6 @@ import mods.flammpfeil.slashblade.item.ItemSlashBlade;
 import mods.flammpfeil.slashblade.named.event.LoadEvent.InitEvent;
 import mods.flammpfeil.slashblade.named.event.LoadEvent.PostInitEvent;
 import net.minecraft.init.Blocks;
-import net.minecraft.init.Enchantments;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.nbt.NBTTagCompound;
@@ -27,7 +25,7 @@ public class BladeMURASAMA {
 	        NBTTagCompound tag = new NBTTagCompound();
 	        customblade.setTagCompound(tag);
 	        
-	        ItemSlashBladeNamed.CurrentItemName.set(tag, this.name);
+	        ItemSlashBladeNamed.CurrentItemName.set(tag, name);
 	        ItemSlashBladeNamed.CustomMaxDamage.set(tag, Integer.valueOf(250));
 	        ItemSlashBlade.setBaseAttackModifier(tag, 4.0F + ToolMaterial.DIAMOND.getAttackDamage());
 	        ItemSlashBlade.TextureName.set(tag, "named/murasamablade/murasama");

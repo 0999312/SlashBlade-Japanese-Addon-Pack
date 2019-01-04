@@ -1,7 +1,6 @@
 package cn.mmf.slashblade_addon.item;
 
 import cn.mmf.slashblade_addon.ConfigLoader;
-import cn.mmf.slashblade_addon.SJAP;
 import cofh.CoFHCore;
 import mods.flammpfeil.slashblade.SlashBlade;
 import net.minecraft.item.Item;

@@ -1,18 +1,9 @@
 package cn.mmf.slashblade_addon.entity;
 
 import cn.mmf.slashblade_addon.SJAP;
-import cn.mmf.slashblade_addon.client.renderer.entity.RenderDriveEx;
-import cn.mmf.slashblade_addon.client.renderer.entity.RenderPhantomSwordEx;
 import mods.flammpfeil.slashblade.SlashBlade;
-import net.minecraft.client.renderer.entity.Render;
-import net.minecraft.client.renderer.entity.RenderManager;
-import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.fml.client.registry.IRenderFactory;
-import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class EntityLoader {
 	public EntityLoader() {

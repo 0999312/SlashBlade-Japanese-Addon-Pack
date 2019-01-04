@@ -1,12 +1,10 @@
 package cn.mmf.slashblade_addon.specialattack;
 
-import mods.flammpfeil.slashblade.ability.StylishRankManager.AttackTypes;
 import cn.mmf.slashblade_addon.entity.EntityAquaEdge;
 import mods.flammpfeil.slashblade.ability.StylishRankManager;
 import mods.flammpfeil.slashblade.item.ItemSlashBlade;
 import mods.flammpfeil.slashblade.specialattack.SpecialAttackBase;
 import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Enchantments;
 import net.minecraft.init.SoundEvents;
@@ -25,8 +23,6 @@ public class AquaEdge extends SpecialAttackBase
 
 	private static final float SPEED = 1.5f;
 	private static final int LIFE_TIME = 10;
-	private static final boolean MULTI_HIT = true;
-  
 	@Override
 	public String toString()
 	{

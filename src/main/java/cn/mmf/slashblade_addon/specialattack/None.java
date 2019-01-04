@@ -11,6 +11,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.world.World;
 
+@SuppressWarnings("unused")
 public class None extends SpecialAttackBase
 {
 	public static String AttackType = StylishRankManager.AttackTypes.registerAttackType("Provoke", -1.0f);

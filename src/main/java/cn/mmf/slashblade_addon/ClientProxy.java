@@ -3,7 +3,6 @@ package cn.mmf.slashblade_addon;
 import cn.mmf.slashblade_addon.client.renderer.entity.RenderDriveEx;
 import cn.mmf.slashblade_addon.client.renderer.entity.RenderPhantomSwordEx;
 import cn.mmf.slashblade_addon.entity.EntityDriveEx;
-import cn.mmf.slashblade_addon.entity.EntityLoader;
 import cn.mmf.slashblade_addon.entity.EntityPhantomSwordEx;
 import cn.mmf.slashblade_addon.item.ItemLoader;
 import cofh.CoFHCore;
@@ -21,8 +20,6 @@ import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 import thaumcraft.Thaumcraft;
 
 public class ClientProxy extends CommonProxy {
@@ -53,7 +50,8 @@ public class ClientProxy extends CommonProxy {
 	        if(Loader.isModLoaded(Thaumcraft.MODID)) Slashblade_model(ItemLoader.tcblade);
 	    }
 		static final ModelResourceLocation modelLoc = new ModelResourceLocation("flammpfeil.slashblade:model/named/blade.obj");
-    	public static void Slashblade_model(Item item) {
+    	@SuppressWarnings("deprecation")
+		public static void Slashblade_model(Item item) {
     		ModelLoader.setCustomModelResourceLocation(item, 0, modelLoc);
     		ForgeHooksClient.registerTESRItemStack(item, 0, DummyTileEntity.class);
     	}

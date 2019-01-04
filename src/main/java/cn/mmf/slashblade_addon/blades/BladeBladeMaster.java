@@ -13,8 +13,6 @@ import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.oredict.OreDictionary;
-import net.minecraftforge.oredict.ShapedOreRecipe;
 
 public class BladeBladeMaster {
 	public static final String namegreenmist = "flammpfeil.slashblade.named.blademaster.greenmist";

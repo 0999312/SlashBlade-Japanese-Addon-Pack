@@ -2,12 +2,9 @@ package cn.mmf.slashblade_addon.item;
 
 import java.util.List;
 
-import javax.annotation.Nullable;
-
 import cofh.api.item.IMultiModeItem;
 import cofh.core.init.CoreEnchantments;
 import cofh.core.init.CoreProps;
-import cofh.core.item.IEnchantableItem;
 import cofh.core.key.KeyBindingItemMultiMode;
 import cofh.core.util.helpers.DamageHelper;
 import cofh.core.util.helpers.EnergyHelper;
@@ -21,20 +18,16 @@ import mods.flammpfeil.slashblade.ability.StylishRankManager;
 import mods.flammpfeil.slashblade.entity.EntityDrive;
 import mods.flammpfeil.slashblade.item.ItemSlashBlade;
 import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Enchantments;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumParticleTypes;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundCategory;
-import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
 
@@ -49,8 +42,8 @@ public class ItemSlashBladeRF extends ItemSlashBladeNamed implements IEnergyCont
 		super(par2EnumToolMaterial, baseAttackModifiers);
 	}
 	public ItemSlashBladeRF setEnergyParams(int maxEnergy, int maxTransfer, int energyPerUse, int energyPerUseCharged) {
-		this.maxEnergy = maxEnergy;
-		this.maxTransfer = maxTransfer;
+		ItemSlashBladeRF.maxEnergy = maxEnergy;
+		ItemSlashBladeRF.maxTransfer = maxTransfer;
 		this.energyPerUse = energyPerUse;
 		this.energyPerUseCharged = energyPerUseCharged;
 
@@ -189,8 +182,7 @@ public class ItemSlashBladeRF extends ItemSlashBladeNamed implements IEnergyCont
 	    
 	    int energy = getEnergyStored(stack);
 	    rankAmount = Math.min(energy, rankAmount);
-	    
-	    NBTTagCompound tag = getItemTagCompound(stack);
+
 	    int startupCost = 1000;
 	    
 	    World world = player.world;
@@ -228,6 +220,7 @@ public class ItemSlashBladeRF extends ItemSlashBladeNamed implements IEnergyCont
 		public ICapabilityProvider initCapabilities(ItemStack stack, NBTTagCompound nbt) {
 			return new EnergyContainerItemWrapper(stack, this);
 		}
+		@SuppressWarnings({ "rawtypes", "unchecked" })
 		@Override
 		public void addInformation(ItemStack stack, World arg1, List tooltip, ITooltipFlag arg3) {
 			super.addInformation(stack, arg1, tooltip, arg3);

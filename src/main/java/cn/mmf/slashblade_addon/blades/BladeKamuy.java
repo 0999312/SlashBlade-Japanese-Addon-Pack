@@ -14,7 +14,6 @@ import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.oredict.ShapedOreRecipe;
 
 public class BladeKamuy {
 	public static final String namebase = "flammpfeil.slashblade.named.kamuy.base";
