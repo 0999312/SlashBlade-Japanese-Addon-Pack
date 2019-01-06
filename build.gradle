@@ -11,9 +11,9 @@ apply plugin: 'net.minecraftforge.gradle.forge'
 
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 
-version = "1.0.4"
+version = "1.0.6"
 group = "cn.mmf"
-archivesBaseName = "lastsmith"
+archivesBaseName = "SJAP"
 
 sourceCompatibility = targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
 compileJava {

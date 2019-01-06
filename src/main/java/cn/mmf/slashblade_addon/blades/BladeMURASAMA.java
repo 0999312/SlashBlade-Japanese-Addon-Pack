@@ -1,7 +1,7 @@
 package cn.mmf.slashblade_addon.blades;
 
 import cn.mmf.slashblade_addon.item.ItemLoader;
-import cn.mmf.slashblade_addon.recipes.RecipeAwakeBladeRF;
+import cn.mmf.slashblade_addon.recipes.RecipeAwakeBladeSJAP;
 import cn.mmf.slashblade_addon.recipes.RecipeRestartUserRF;
 import mods.flammpfeil.slashblade.ItemSlashBladeNamed;
 import mods.flammpfeil.slashblade.SlashBlade;
@@ -48,7 +48,7 @@ public class BladeMURASAMA {
 			      Character.valueOf('Q'), "blockQuartz", 
 			      Character.valueOf('N'), "netherStar"
 		}));
-	    SlashBlade.addRecipe(name, new RecipeAwakeBladeRF(new ResourceLocation("flammpfeil.slashblade",name), SlashBlade.getCustomBlade(name),SlashBlade.getCustomBlade("flammpfeil.slashblade.named.muramasa"),new Object[]{
+	    SlashBlade.addRecipe(name, new RecipeAwakeBladeSJAP(new ResourceLocation("flammpfeil.slashblade",name), SlashBlade.getCustomBlade(name),SlashBlade.getCustomBlade("flammpfeil.slashblade.named.muramasa"),new Object[]{
 	    		 " RI", "RBG", "SL ", 
 	    	      Character.valueOf('I'), "ingotIron", 
 	    	      Character.valueOf('R'), "blockRedstone", 

@@ -6,7 +6,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 
-public class RecipeKirisaya extends RecipeAwakeBlade {
+public class RecipeKirisaya extends RecipeAwakeBladeSJAP {
 	private final ItemStack sphere;
 
 	public RecipeKirisaya(ResourceLocation group,ItemStack result,ItemStack requiredStateBlade,ItemStack reqiredSphere,Object... recipe){

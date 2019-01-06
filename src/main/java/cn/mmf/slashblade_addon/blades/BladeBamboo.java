@@ -1,6 +1,6 @@
 package cn.mmf.slashblade_addon.blades;
 
-import cn.mmf.slashblade_addon.recipes.RecipeAwakeBlade;
+import cn.mmf.slashblade_addon.recipes.RecipeAwakeBladeSJAP;
 import mods.flammpfeil.slashblade.ItemSlashBladeNamed;
 import mods.flammpfeil.slashblade.SlashBlade;
 import mods.flammpfeil.slashblade.item.ItemSlashBlade;
@@ -52,7 +52,7 @@ public class BladeBamboo {
 				"  I","DI ","S  ",'S',"logWood",'I',ingot,'D',"dyeRed"
 		}));
 
-	    SlashBlade.addRecipe(namekatana, new RecipeAwakeBlade(new ResourceLocation("flammpfeil.slashblade",namekatana), SlashBlade.getCustomBlade(namekatana),SlashBlade.getCustomBlade(namekatana+"_noSheath"),new Object[]{
+	    SlashBlade.addRecipe(namekatana, new RecipeAwakeBladeSJAP(new ResourceLocation("flammpfeil.slashblade",namekatana), SlashBlade.getCustomBlade(namekatana),SlashBlade.getCustomBlade(namekatana+"_noSheath"),new Object[]{
 				"  S", " W ", "B  ", Character.valueOf('S'), soul, Character.valueOf('B'), SlashBlade.getCustomBlade(namekatana+"_noSheath"),Character.valueOf('W'), new ItemStack(SlashBlade.wrapBlade)
 		}));
 	}
@@ -69,7 +69,7 @@ public class BladeBamboo {
         ItemSlashBlade.RepairCount.set(reqTag1,1);
 	    ItemStack fox = SlashBlade.findItemStack(SlashBlade.modid,nameWhite, 1);
 
-	    SlashBlade.addRecipe(nameWhite, new RecipeAwakeBlade(new ResourceLocation(SlashBlade.modid,nameWhite),fox, foxbladeReqired,
+	    SlashBlade.addRecipe(nameWhite, new RecipeAwakeBladeSJAP(new ResourceLocation(SlashBlade.modid,nameWhite),fox, foxbladeReqired,
 	    		new Object[]{"DAD", "DBD", "DHD",
 	    				Character.valueOf('H'), new ItemStack(Items.WHEAT,1),
 	    				Character.valueOf('A'), SlashBlade.findItemStack(SlashBlade.modid,SlashBlade.ProudSoulStr,1),
@@ -84,7 +84,7 @@ public class BladeBamboo {
         ItemSlashBlade.ProudSoul.set(reqTag2,1000);
         ItemSlashBlade.RepairCount.set(reqTag2,1);
 	    ItemStack fox2 = SlashBlade.findItemStack(SlashBlade.modid,"flammpfeil.slashblade.named.fox.black", 1);
-	    SlashBlade.addRecipe(nameBlack, new RecipeAwakeBlade(new ResourceLocation(SlashBlade.modid,nameBlack),fox2, foxblade2Reqired,
+	    SlashBlade.addRecipe(nameBlack, new RecipeAwakeBladeSJAP(new ResourceLocation(SlashBlade.modid,nameBlack),fox2, foxblade2Reqired,
 	    		new Object[]{"DAD", "DBD", "DHD",
 	    				Character.valueOf('H'), new ItemStack(Items.WHEAT,1),
 	    				Character.valueOf('A'), SlashBlade.findItemStack(SlashBlade.modid,SlashBlade.ProudSoulStr,1),

@@ -6,7 +6,7 @@ import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 
-public class RecipeRestartUserRF extends RecipeAwakeBlade{
+public class RecipeRestartUserRF extends RecipeAwakeBladeSJAP{
 
 	public RecipeRestartUserRF(ResourceLocation loc, ItemStack result, ItemStack requiredStateBlade, Object[] recipe) {
 		super(loc, result, requiredStateBlade, recipe);

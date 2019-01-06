@@ -1,7 +1,7 @@
 package cn.mmf.slashblade_addon.blades;
 
 import cn.mmf.slashblade_addon.item.ItemLoader;
-import cn.mmf.slashblade_addon.recipes.RecipeAwakeBlade;
+import cn.mmf.slashblade_addon.recipes.RecipeAwakeBladeSJAP;
 import mods.flammpfeil.slashblade.ItemSlashBladeNamed;
 import mods.flammpfeil.slashblade.SlashBlade;
 import mods.flammpfeil.slashblade.item.ItemSlashBlade;
@@ -71,7 +71,7 @@ public class BladeZephyr {
 		ItemStack ReqBlade = SlashBlade.getCustomBlade(namewindeater);
 	    NBTTagCompound tag = ItemSlashBlade.getItemTagCompound(ReqBlade);
 	    ItemSlashBlade.KillCount.set(tag, Integer.valueOf(100));
-	    SlashBlade.addRecipe(name, new RecipeAwakeBlade(new ResourceLocation("flammpfeil.slashblade",name), SlashBlade.getCustomBlade(name), ReqBlade, new Object[]{
+	    SlashBlade.addRecipe(name, new RecipeAwakeBladeSJAP(new ResourceLocation("flammpfeil.slashblade",name), SlashBlade.getCustomBlade(name), ReqBlade, new Object[]{
 	    		" X ", "XBX", " X ", Character.valueOf('X'), soul, Character.valueOf('B'), ReqBlade
 	    }));
 	}

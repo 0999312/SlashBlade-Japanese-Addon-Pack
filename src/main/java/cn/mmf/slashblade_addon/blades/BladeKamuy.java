@@ -1,6 +1,6 @@
 package cn.mmf.slashblade_addon.blades;
 
-import cn.mmf.slashblade_addon.recipes.RecipeAwakeBlade;
+import cn.mmf.slashblade_addon.recipes.RecipeAwakeBladeSJAP;
 import mods.flammpfeil.slashblade.ItemSlashBladeNamed;
 import mods.flammpfeil.slashblade.SlashBlade;
 import mods.flammpfeil.slashblade.item.ItemSlashBlade;
@@ -119,7 +119,7 @@ public class BladeKamuy {
 		ItemSlashBlade.KillCount.set(reqtag_base, 1000);
 		ItemSlashBlade.ProudSoul.set(reqtag_base, 1000);
 		reqblade_base.addEnchantment(Enchantments.LOOTING, 1);
-		SlashBlade.addRecipe(namebase, new RecipeAwakeBlade(new ResourceLocation("flammpfeil.slashblade",namebase), blade_base, reqblade_base, new Object[]{
+		SlashBlade.addRecipe(namebase, new RecipeAwakeBladeSJAP(new ResourceLocation("flammpfeil.slashblade",namebase), blade_base, reqblade_base, new Object[]{
 				"SQS","IKI","SBS",'S', sphere,'K', reqblade_base,'Q', "gemQuartz",'I', "blockIron",'B', Items.BOOK
 		}));
 		ItemStack reqblade = SlashBlade.getCustomBlade(namebase);
@@ -127,15 +127,15 @@ public class BladeKamuy {
 		ItemSlashBlade.RepairCount.set(reqtag, 20);
 		ItemSlashBlade.KillCount.set(reqtag, 2000);
 		ItemSlashBlade.ProudSoul.set(reqtag, 5000);
-		SlashBlade.addRecipe(namewater, new RecipeAwakeBlade(new ResourceLocation("flammpfeil.slashblade",namewater), blade_water, reqblade, new Object[]{
+		SlashBlade.addRecipe(namewater, new RecipeAwakeBladeSJAP(new ResourceLocation("flammpfeil.slashblade",namewater), blade_water, reqblade, new Object[]{
 				"S8S","4K6","S2S",
 				'S', sphere,'K', reqblade,'8',"blockLapis",'4', Blocks.ICE,'6', Blocks.SNOW,'2', Items.WATER_BUCKET
 		}));
-		SlashBlade.addRecipe(namefire, new RecipeAwakeBlade(new ResourceLocation("flammpfeil.slashblade",namefire), blade_fire, reqblade, new Object[]{
+		SlashBlade.addRecipe(namefire, new RecipeAwakeBladeSJAP(new ResourceLocation("flammpfeil.slashblade",namefire), blade_fire, reqblade, new Object[]{
 				"S8S","4K6","S2S",
 				'S', sphere,'K', reqblade,'8',"blockRedstone",'4',Items.FIRE_CHARGE,'6', Items.BLAZE_ROD,'2', Items.LAVA_BUCKET
 		}));
-		SlashBlade.addRecipe(namelightning, new RecipeAwakeBlade(new ResourceLocation("flammpfeil.slashblade",namelightning), blade_lightning, reqblade, new Object[]{
+		SlashBlade.addRecipe(namelightning, new RecipeAwakeBladeSJAP(new ResourceLocation("flammpfeil.slashblade",namelightning), blade_lightning, reqblade, new Object[]{
 				"S8S","4K6","S2S",
 				'S', sphere,'K', reqblade,'8',"blockIron",'4', "blockGold",'6', "blockDiamond",'2', "blockEmerald"
 		}));
