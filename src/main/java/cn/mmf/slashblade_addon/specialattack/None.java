@@ -1,7 +1,6 @@
 package cn.mmf.slashblade_addon.specialattack;
 
 import java.util.Random;
-import mods.flammpfeil.slashblade.ability.StylishRankManager.AttackTypes;
 import mods.flammpfeil.slashblade.ability.StylishRankManager;
 import mods.flammpfeil.slashblade.item.ItemSlashBlade;
 import mods.flammpfeil.slashblade.specialattack.SpecialAttackBase;
@@ -11,7 +10,6 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.world.World;
 
-@SuppressWarnings("unused")
 public class None extends SpecialAttackBase
 {
 	public static String AttackType = StylishRankManager.AttackTypes.registerAttackType("Provoke", -1.0f);

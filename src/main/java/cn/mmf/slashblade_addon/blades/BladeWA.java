@@ -40,7 +40,7 @@ public class BladeWA {
 	        ItemSlashBlade.setBaseAttackModifier(tag,3F);
 	        ItemSlashBlade.TextureName.set(tag, "wa/waB");
 	        ItemSlashBlade.ModelName.set(tag, "wa/model");
-	        
+	        ItemSlashBlade.IsThrownOffhand.set(tag, true);
 	        SlashBlade.registerCustomItemStack(nametachi, customblade);
 	        ItemSlashBladeNamed.NamedBlades.add(nametachi);
 	}
@@ -51,7 +51,7 @@ public class BladeWA {
 	        NBTTagCompound tag = new NBTTagCompound();
 	        customblade.setTagCompound(tag);
 	        ItemSlashBladeNamed.CurrentItemName.set(tag, namekatana);
-	        ItemSlashBladeNamed.CustomMaxDamage.set(tag, Integer.valueOf(457));
+	        ItemSlashBladeNamed.CustomMaxDamage.set(tag, Integer.valueOf(7));
 	        ItemSlashBlade.setBaseAttackModifier(tag, 3F);
 	        ItemSlashBlade.TextureName.set(tag, "wa/waA");
 	        ItemSlashBlade.ModelName.set(tag, "named/muramasa/muramasa");

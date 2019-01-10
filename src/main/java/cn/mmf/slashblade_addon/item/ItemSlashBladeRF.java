@@ -17,6 +17,8 @@ import mods.flammpfeil.slashblade.TagPropertyAccessor;
 import mods.flammpfeil.slashblade.ability.StylishRankManager;
 import mods.flammpfeil.slashblade.entity.EntityDrive;
 import mods.flammpfeil.slashblade.item.ItemSlashBlade;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
@@ -30,6 +32,8 @@ import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.world.World;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ItemSlashBladeRF extends ItemSlashBladeNamed implements IEnergyContainerItem, IMultiModeItem {
 	  public static final TagPropertyAccessor.TagPropertyString Username = new TagPropertyAccessor.TagPropertyString("Username");
@@ -222,22 +226,41 @@ public class ItemSlashBladeRF extends ItemSlashBladeNamed implements IEnergyCont
 		}
 		@SuppressWarnings({ "rawtypes", "unchecked" })
 		@Override
+		@SideOnly(Side.CLIENT)
 		public void addInformation(ItemStack stack, World arg1, List tooltip, ITooltipFlag arg3) {
-			super.addInformation(stack, arg1, tooltip, arg3);
-			
-			if (StringHelper.displayShiftForDetail && !StringHelper.isShiftKeyDown()) {
-				tooltip.add(StringHelper.shiftForDetails());
-			}
-			if (!StringHelper.isShiftKeyDown()) {
-				return;
-			}
-			if (stack.getTagCompound() == null) {
-				EnergyHelper.setDefaultEnergyTag(stack, 0);
-			}
-			tooltip.add(StringHelper.localize("info.cofh.charge") + ": " + StringHelper.getScaledNumber(getEnergyStored(stack)) + " / " + StringHelper.getScaledNumber(getMaxEnergyStored(stack)) + " RF");
-			tooltip.add(StringHelper.ORANGE + getEnergyPerUse(stack) + " " + StringHelper.localize("info.flammpfeil.slashblade.tool.energyPerUse") + StringHelper.END);
-			tooltip.add(StringHelper.RED +StringHelper.localize("info.flammpfeil.slashblade.tool.user") + ": " + Username.get(ItemSlashBlade.getItemTagCompound(stack)));
-			addEmpoweredTip(this, stack, tooltip);
+			   EntityPlayer par2EntityPlayer = Minecraft.getMinecraft().player;
+		        boolean par4 = arg3.isAdvanced();
+		        if(par2EntityPlayer == null) return;
+		        addInformationOwner(stack, par2EntityPlayer, tooltip, par4);
+				addInformationSwordClass(stack, par2EntityPlayer, tooltip, par4);
+				addInformationKillCount(stack, par2EntityPlayer, tooltip, par4);
+				addInformationProudSoul(stack, par2EntityPlayer, tooltip, par4);
+		        addInformationSpecialAttack(stack, par2EntityPlayer, tooltip, par4);
+		        addInformationRepairCount(stack, par2EntityPlayer, tooltip, par4);
+		        addInformationRangeAttack(stack, par2EntityPlayer, tooltip, par4);
+		        addInformationSpecialEffec(stack, par2EntityPlayer, tooltip, par4);
+		        addInformationMaxAttack(stack, par2EntityPlayer, tooltip, par4);
+				NBTTagCompound tag = getItemTagCompound(stack);
+		        if(tag.hasKey(adjustXStr)){
+		            float ax = tag.getFloat(adjustXStr);
+		            float ay = tag.getFloat(adjustYStr);
+		            float az = tag.getFloat(adjustZStr);
+		            tooltip.add(String.format("adjust x:%.1f y:%.1f z:%.1f", ax,ay,az));
+		        }
+
+				if (StringHelper.displayShiftForDetail && !StringHelper.isShiftKeyDown()) {
+					tooltip.add(I18n.format("info.cofh.holdShiftForDetails"));
+				}
+				if (!StringHelper.isShiftKeyDown()) {
+					return;
+				}
+				if (stack.getTagCompound() == null) {
+					EnergyHelper.setDefaultEnergyTag(stack, 0);
+				}
+				tooltip.add(StringHelper.localize("info.cofh.charge") + ": " + StringHelper.getScaledNumber(getEnergyStored(stack)) + " / " + StringHelper.getScaledNumber(getMaxEnergyStored(stack)) + " RF");
+				tooltip.add(StringHelper.ORANGE + getEnergyPerUse(stack) + " " + StringHelper.localize("info.flammpfeil.slashblade.tool.energyPerUse") + StringHelper.END);
+				tooltip.add(StringHelper.RED +StringHelper.localize("info.flammpfeil.slashblade.tool.user") + ": " + Username.get(ItemSlashBlade.getItemTagCompound(stack)));
+				addEmpoweredTip(this, stack, tooltip);
 		}
 
 		public void addEmpoweredTip(IMultiModeItem item, ItemStack stack, List<String> tooltip) {
