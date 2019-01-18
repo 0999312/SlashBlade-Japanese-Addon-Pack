@@ -1,0 +1,30 @@
+{
+   "display" : {
+      "title" : {
+         "translate" : "flammpfeil.slashblade.test"
+      },
+      "description" : {
+         "translate" : "flammpfeil.slashblade.test",
+         "with" : [ "\n" ]
+      },
+      "icon" : {
+         "item" : "flammpfeil.slashblade:slashbladenamed",
+         "data" : 0,
+         "nbt" : "{ench: [{lvl:1,id:35}], ModelName: \"named/yamato\", TextureName: \"named/yamato\", CurrentItemName: \"flammpfeil.slashblade.named.yamato\"}"
+      },
+      "background" : "minecraft:textures/blocks/red_nether_brick.png",
+      "frame" : "task"
+   },
+   "criteria" : {
+      "slashblade_create" : {
+         "trigger" : "flammpfeil.slashblade:slashblade_create",
+         "conditions" : {
+            "recipe" : "flammpfeil.slashblade:flammpfeil.slashblade.named.nihil"
+         }
+      }
+   },
+   "rewards" : {
+      "recipes" : [ "flammpfeil.slashblade:recipexes" ],
+      "loot" : [ "flammpfeil.slashblade:rewards/root" ]
+   }
+}

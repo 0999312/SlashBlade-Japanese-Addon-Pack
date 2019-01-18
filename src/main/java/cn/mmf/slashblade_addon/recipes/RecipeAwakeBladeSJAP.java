@@ -30,7 +30,6 @@ public class RecipeAwakeBladeSJAP extends RecipeAwakeBlade {
 	@Override
 	public ItemStack getCraftingResult(InventoryCrafting var1) {
 		ItemStack result = super.getCraftingResult(var1);
-
 		for(int idx = 0; idx < var1.getSizeInventory(); idx++){
 			ItemStack curIs = var1.getStackInSlot(idx);
 			if(!curIs.isEmpty()
@@ -107,7 +106,9 @@ public class RecipeAwakeBladeSJAP extends RecipeAwakeBlade {
 
 		return result;
 	}
-    
+
+	
+	
     @Override
     public boolean matches(InventoryCrafting inv, World world) {
 
@@ -148,8 +149,9 @@ public class RecipeAwakeBladeSJAP extends RecipeAwakeBlade {
                 
             }
         }
-
         return result;
     }
 
+
+    
 }
