@@ -1,6 +1,5 @@
 package cn.mmf.slashblade_addon;
 
-import cn.mmf.slashblade_addon.advancements.SlashBladeAdvancements;
 import cn.mmf.slashblade_addon.entity.EntityLoader;
 import cn.mmf.slashblade_addon.item.ItemLoader;
 import cn.mmf.slashblade_addon.specialeffect.SELoader;
@@ -25,9 +24,7 @@ public class CommonProxy {
     public void init(FMLInitializationEvent event)
     { 
     	new EntityLoader();
-    	new EventLoader();
 
-    	SlashBladeAdvancements.init();
     	if(Loader.isModLoaded(Thaumcraft.MODID)){
    		 ThaumcraftApi.registerResearchLocation(new ResourceLocation(SlashBlade.modid+":research/research.json"));
     	}

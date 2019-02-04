@@ -17,5 +17,7 @@ public class SAloader {
 		ItemSlashBlade.specialAttacks.put(37, new FlareSpiral());
 		ItemSlashBlade.specialAttacks.put(38, new LightningSwords());
 		ItemSlashBlade.specialAttacks.put(39, new TerraSwords());
+		
+		ItemSlashBlade.specialAttacks.put(40, new SXSA1());
 	}
 }

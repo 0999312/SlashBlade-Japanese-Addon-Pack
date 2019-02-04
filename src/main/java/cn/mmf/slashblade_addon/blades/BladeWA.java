@@ -86,11 +86,11 @@ public class BladeWA {
 		SlashBlade.addRecipe(nametachi+"_noSheath", new ShapedOreRecipe(new ResourceLocation("flammpfeil.slashblade",nametachi+"_noSheath"), SlashBlade.getCustomBlade(nametachi+"_noSheath"), new Object[]{
 				" II","II ","S  ",'S',"stickWood",'I',ingot
 		}));
-	    SlashBlade.addRecipe(namekatana, new RecipeAwakeBladeSJAP(new ResourceLocation("flammpfeil.slashblade",namekatana), SlashBlade.getCustomBlade(namekatana),SlashBlade.getCustomBlade(namekatana+"_noSheath"),new Object[]{
-				"  S", " W ", "B  ", Character.valueOf('S'), soul, Character.valueOf('B'), SlashBlade.getCustomBlade(namekatana+"_noSheath"),Character.valueOf('W'), new ItemStack(SlashBlade.wrapBlade)
+	    SlashBlade.addRecipe(namekatana, new RecipeAwakeBladeSJAP(new ResourceLocation("flammpfeil.slashblade",namekatana), SlashBlade.getCustomBlade(namekatana),SlashBlade.findItemStack(SlashBlade.modid,"slashbladeWrapper",1),new Object[]{
+				"  S", " W ", "B  ", Character.valueOf('S'), soul, Character.valueOf('B'), SlashBlade.getCustomBlade(namekatana+"_noSheath"),Character.valueOf('W'), SlashBlade.findItemStack(SlashBlade.modid,"slashbladeWrapper",1)
 				}));
-		SlashBlade.addRecipe(nametachi, new RecipeAwakeBladeSJAP(new ResourceLocation("flammpfeil.slashblade",nametachi), SlashBlade.getCustomBlade(nametachi),SlashBlade.getCustomBlade(nametachi+"_noSheath"),new Object[]{
-				"  S", " W ", "B  ", Character.valueOf('S'), soul, Character.valueOf('B'), SlashBlade.getCustomBlade(nametachi+"_noSheath"),Character.valueOf('W'), new ItemStack(SlashBlade.wrapBlade)
+		SlashBlade.addRecipe(nametachi, new RecipeAwakeBladeSJAP(new ResourceLocation("flammpfeil.slashblade",nametachi), SlashBlade.getCustomBlade(nametachi),SlashBlade.findItemStack(SlashBlade.modid,"slashbladeWrapper",1),new Object[]{
+				"  S", " W ", "B  ", Character.valueOf('S'), soul, Character.valueOf('B'), SlashBlade.getCustomBlade(nametachi+"_noSheath"),Character.valueOf('W'), SlashBlade.findItemStack(SlashBlade.modid,"slashbladeWrapper",1)
 				}));
 	}
 }

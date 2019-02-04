@@ -151,7 +151,7 @@ public class ItemSlashBladeRF extends ItemSlashBladeNamed implements IEnergyCont
 	  {
 	    NBTTagCompound tag = getItemTagCompound(sitem);
 	    if ((isEmpowered(sitem)) && (par3Entity != null) && (par2World.getTotalWorldTime() % 10L == 0L) && ((!isCurrent) || 
-	      (OnClick.get(tag).booleanValue()) || (((par3Entity instanceof EntityPlayer)) && (!((EntityPlayer)par3Entity).isSwingInProgress) )))
+	      (OnClick.get(tag).booleanValue()) || (((par3Entity instanceof EntityPlayer)) )))
 	    {
 	      if (!par2World.isRemote)
 	      {

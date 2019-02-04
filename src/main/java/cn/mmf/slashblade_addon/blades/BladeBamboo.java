@@ -52,8 +52,8 @@ public class BladeBamboo {
 				"  I","DI ","S  ",'S',"logWood",'I',ingot,'D',"dyeRed"
 		}));
 
-	    SlashBlade.addRecipe(namekatana, new RecipeAwakeBladeSJAP(new ResourceLocation("flammpfeil.slashblade",namekatana), SlashBlade.getCustomBlade(namekatana),SlashBlade.getCustomBlade(namekatana+"_noSheath"),new Object[]{
-				"  S", " W ", "B  ", Character.valueOf('S'), soul, Character.valueOf('B'), SlashBlade.getCustomBlade(namekatana+"_noSheath"),Character.valueOf('W'), new ItemStack(SlashBlade.wrapBlade)
+	    SlashBlade.addRecipe(namekatana, new RecipeAwakeBladeSJAP(new ResourceLocation("flammpfeil.slashblade",namekatana), SlashBlade.getCustomBlade(namekatana), SlashBlade.findItemStack(SlashBlade.modid,"slashbladeWrapper",1),new Object[]{
+				"  S", " W ", "B  ", Character.valueOf('S'), soul, Character.valueOf('B'), SlashBlade.getCustomBlade(namekatana+"_noSheath"),Character.valueOf('W'), SlashBlade.findItemStack(SlashBlade.modid,"slashbladeWrapper",1)
 		}));
 	}
 	@SubscribeEvent

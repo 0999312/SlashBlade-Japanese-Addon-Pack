@@ -14,6 +14,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
+import net.minecraftforge.oredict.OreDictionary;
 
 public class RecipeAwakeBladeSJAP extends RecipeAwakeBlade {
     ItemStack requiredStateBlade = ItemStack.EMPTY;
@@ -115,7 +116,7 @@ public class RecipeAwakeBladeSJAP extends RecipeAwakeBlade {
         boolean result = super.matches(inv, world);
 
         if(result && !requiredStateBlade.isEmpty()){
-        	requiredStateBlade.setItemDamage(Short.MAX_VALUE);
+        	requiredStateBlade.setItemDamage(OreDictionary.WILDCARD_VALUE);
             for(int idx = 0; idx < inv.getSizeInventory(); idx++){
                 ItemStack curIs = inv.getStackInSlot(idx);
                 if(!curIs.isEmpty()
