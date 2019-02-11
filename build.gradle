@@ -11,7 +11,7 @@ apply plugin: 'net.minecraftforge.gradle.forge'
 
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 
-version = "1.0.8"
+version = "1.0.9"
 group = "cn.mmf"
 archivesBaseName = "SJAP"
 
@@ -125,7 +125,7 @@ dependencies {
 	
 	deobfCompile "slashblade:SlashBlade:mc1.12:r15"
 	deobfCompile "baubles:Baubles:1.12:1.5.2"
-    compile "vazkii.patchouli:Patchouli:1.0-10.51"
+    compile "vazkii.patchouli:Patchouli:1.0-16.84"
 	deobfCompile "vazkii.botania:Botania:r1.10-357.7"
 	deobfCompile "thaumcraft:Thaumcraft:1.12.2:6.1.BETA26"
 	deobfCompile "the-twilight-forest:twilightforest-1.12.2:3.8.689:universal"

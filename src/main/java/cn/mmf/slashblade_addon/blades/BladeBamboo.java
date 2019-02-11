@@ -12,25 +12,10 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.oredict.ShapedOreRecipe;
 
 public class BladeBamboo {
 	public static final String namekatana = "wrap.BambooMod.katana";
 
-	@SubscribeEvent
-	public void InitKatana_NoSheath(InitEvent event){
-	     ItemStack customblade = new ItemStack(SlashBlade.bladeNamed,1,0);
-	        NBTTagCompound tag = new NBTTagCompound();
-	        customblade.setTagCompound(tag);
-	        ItemSlashBladeNamed.CurrentItemName.set(tag, namekatana);
-	        ItemSlashBladeNamed.CustomMaxDamage.set(tag, Integer.valueOf(45));
-	        ItemSlashBlade.setBaseAttackModifier(tag, 4F);
-            ItemSlashBlade.TextureName.set(tag,"BambooKatana");
-	        ItemSlashBlade.IsNoScabbard.set(tag, true);
-	        ItemSlashBlade.IsDestructable.set(tag, true);
-	        SlashBlade.registerCustomItemStack(namekatana+"_noSheath", customblade);
-	        ItemSlashBladeNamed.NamedBlades.add(namekatana+"_noSheath");
-	}
 	@SubscribeEvent
 	public void InitKatana(InitEvent event){
 	     ItemStack customblade = new ItemStack(SlashBlade.bladeNamed,1,0);
@@ -48,12 +33,10 @@ public class BladeBamboo {
 	public void InitRecipes(PostInitEvent event){
 		ItemStack ingot = SlashBlade.findItemStack("flammpfeil.slashblade", SlashBlade.IngotBladeSoulStr, 1);
 	    ItemStack soul = SlashBlade.findItemStack("flammpfeil.slashblade", SlashBlade.ProudSoulStr, 1);
-		SlashBlade.addRecipe(namekatana+"_noSheath", new ShapedOreRecipe(new ResourceLocation("flammpfeil.slashblade",namekatana+"_noSheath"), SlashBlade.getCustomBlade(namekatana+"_noSheath"), new Object[]{
-				"  I","DI ","S  ",'S',"logWood",'I',ingot,'D',"dyeRed"
-		}));
 
-	    SlashBlade.addRecipe(namekatana, new RecipeAwakeBladeSJAP(new ResourceLocation("flammpfeil.slashblade",namekatana), SlashBlade.getCustomBlade(namekatana), SlashBlade.findItemStack(SlashBlade.modid,"slashbladeWrapper",1),new Object[]{
-				"  S", " W ", "B  ", Character.valueOf('S'), soul, Character.valueOf('B'), SlashBlade.getCustomBlade(namekatana+"_noSheath"),Character.valueOf('W'), SlashBlade.findItemStack(SlashBlade.modid,"slashbladeWrapper",1)
+	    SlashBlade.addRecipe(namekatana, new RecipeAwakeBladeSJAP(new ResourceLocation("flammpfeil.slashblade",namekatana), SlashBlade.getCustomBlade(namekatana), SlashBlade.getCustomBlade(namekatana+"_noSheath"),new Object[]{
+				"RIS", "IW ", "B  ", Character.valueOf('S'), soul, Character.valueOf('B'), Items.IRON_SWORD,Character.valueOf('W'), SlashBlade.findItemStack(SlashBlade.modid,"slashbladeWrapper",1)
+				,'R',"dyeRed",'I',ingot
 		}));
 	}
 	@SubscribeEvent

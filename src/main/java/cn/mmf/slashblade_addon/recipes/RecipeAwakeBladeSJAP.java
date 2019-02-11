@@ -116,13 +116,13 @@ public class RecipeAwakeBladeSJAP extends RecipeAwakeBlade {
         boolean result = super.matches(inv, world);
 
         if(result && !requiredStateBlade.isEmpty()){
-        	requiredStateBlade.setItemDamage(OreDictionary.WILDCARD_VALUE);
+
             for(int idx = 0; idx < inv.getSizeInventory(); idx++){
                 ItemStack curIs = inv.getStackInSlot(idx);
                 if(!curIs.isEmpty()
                         && curIs.getItem() instanceof ItemSlashBlade
                         && curIs.hasTagCompound()){
-                	
+                	requiredStateBlade.setItemDamage(OreDictionary.WILDCARD_VALUE);
                     Map<Enchantment,Integer> oldItemEnchants = EnchantmentHelper.getEnchantments(requiredStateBlade);
                     for(Map.Entry<Enchantment,Integer> enchant: oldItemEnchants.entrySet())
                     {
