@@ -13,6 +13,7 @@ import cofh.core.util.helpers.StringHelper;
 import cofh.redstoneflux.api.IEnergyContainerItem;
 import cofh.redstoneflux.util.EnergyContainerItemWrapper;
 import mods.flammpfeil.slashblade.ItemSlashBladeNamed;
+import mods.flammpfeil.slashblade.SlashBlade;
 import mods.flammpfeil.slashblade.TagPropertyAccessor;
 import mods.flammpfeil.slashblade.ability.StylishRankManager;
 import mods.flammpfeil.slashblade.entity.EntityDrive;
@@ -20,6 +21,7 @@ import mods.flammpfeil.slashblade.item.ItemSlashBlade;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -29,11 +31,13 @@ import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumParticleTypes;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.world.World;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 public class ItemSlashBladeRF extends ItemSlashBladeNamed implements IEnergyContainerItem, IMultiModeItem {
 	  public static final TagPropertyAccessor.TagPropertyString Username = new TagPropertyAccessor.TagPropertyString("Username");
@@ -132,7 +136,18 @@ public class ItemSlashBladeRF extends ItemSlashBladeNamed implements IEnergyCont
 		return getMode(stack) == 1 && getEnergyStored(stack) >= energyPerUseCharged;
 	}
 
-
+    @Override
+    public void getSubItems(CreativeTabs tab, NonNullList<ItemStack> subItems) {
+        if (!this.isInCreativeTab(tab)) return;
+        if (this.isInCreativeTab(CreativeTabs.COMBAT)) return;
+        for(String bladename : NamedBlades){
+            ItemStack blade = SlashBlade.getCustomBlade(bladename);
+            if(blade.getItemDamage() == OreDictionary.WILDCARD_VALUE)
+                blade.setItemDamage(0);
+            if(!blade.isEmpty()) subItems.add(blade);
+        }
+    }
+	
 	@Override
 
 	public boolean hitEntity(ItemStack stack, EntityLivingBase entity, EntityLivingBase player) {

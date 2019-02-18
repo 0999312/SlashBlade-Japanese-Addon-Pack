@@ -3,14 +3,18 @@ package cn.mmf.slashblade_addon.item;
 import java.util.List;
 
 import mods.flammpfeil.slashblade.ItemSlashBladeNamed;
+import mods.flammpfeil.slashblade.SlashBlade;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumParticleTypes;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.minecraftforge.oredict.OreDictionary;
 import thaumcraft.api.items.ItemsTC;
 import thaumcraft.client.fx.FXDispatcher;
 import thaumcraft.common.lib.SoundsTC;
@@ -90,4 +94,16 @@ public class ItemSlashBladeWind extends ItemSlashBladeNamed {
 	  {
 	    return stack2.isItemEqual(new ItemStack(ItemsTC.ingots, 1, 0)) ? true : super.getIsRepairable(stack1, stack2);
 	  }
+	 
+	    @Override
+	    public void getSubItems(CreativeTabs tab, NonNullList<ItemStack> subItems) {
+	        if (!this.isInCreativeTab(tab)) return;
+	        if (this.isInCreativeTab(CreativeTabs.COMBAT)) return;
+	        for(String bladename : NamedBlades){
+	            ItemStack blade = SlashBlade.getCustomBlade(bladename);
+	            if(blade.getItemDamage() == OreDictionary.WILDCARD_VALUE)
+	                blade.setItemDamage(0);
+	            if(!blade.isEmpty()) subItems.add(blade);
+	        }
+	    }
 }
