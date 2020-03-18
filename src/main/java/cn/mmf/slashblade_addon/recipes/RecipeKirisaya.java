@@ -1,12 +1,13 @@
 package cn.mmf.slashblade_addon.recipes;
 
+import mods.flammpfeil.slashblade.RecipeAwakeBlade;
 import mods.flammpfeil.slashblade.item.ItemSlashBlade;
 import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 
-public class RecipeKirisaya extends RecipeAwakeBladeSJAP {
+public class RecipeKirisaya extends RecipeAwakeBlade{
 	private final ItemStack sphere;
 
 	public RecipeKirisaya(ResourceLocation group,ItemStack result,ItemStack requiredStateBlade,ItemStack reqiredSphere,Object... recipe){

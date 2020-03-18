@@ -7,7 +7,6 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 public class SAloader {
 	@SubscribeEvent
 	public void InitSA(InitEvent event){
-		
 		ItemSlashBlade.specialAttacks.put(20, new OverSlash());
 		ItemSlashBlade.specialAttacks.put(30, new RapidPhantomSwords());
 		ItemSlashBlade.specialAttacks.put(31, new SpiralEdge());
@@ -17,7 +16,5 @@ public class SAloader {
 		ItemSlashBlade.specialAttacks.put(37, new FlareSpiral());
 		ItemSlashBlade.specialAttacks.put(38, new LightningSwords());
 		ItemSlashBlade.specialAttacks.put(39, new TerraSwords());
-		
-		ItemSlashBlade.specialAttacks.put(40, new SXSA1());
 	}
 }

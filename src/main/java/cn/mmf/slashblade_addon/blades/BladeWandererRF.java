@@ -1,9 +1,9 @@
 package cn.mmf.slashblade_addon.blades;
 
 import cn.mmf.slashblade_addon.item.ItemLoader;
-import cn.mmf.slashblade_addon.recipes.RecipeAwakeBladeSJAP;
 import cn.mmf.slashblade_addon.recipes.RecipeRestartUserRF;
 import mods.flammpfeil.slashblade.ItemSlashBladeNamed;
+import mods.flammpfeil.slashblade.RecipeAwakeBlade;
 import mods.flammpfeil.slashblade.SlashBlade;
 import mods.flammpfeil.slashblade.item.ItemSlashBlade;
 import mods.flammpfeil.slashblade.named.event.LoadEvent.InitEvent;
@@ -35,7 +35,7 @@ public class BladeWandererRF {
 	@SubscribeEvent
 	public void InitRecipes(PostInitEvent event){
 	    ItemStack soul = SlashBlade.findItemStack("flammpfeil.slashblade", SlashBlade.ProudSoulStr, 1);
-	    SlashBlade.addRecipe(name, new RecipeAwakeBladeSJAP(new ResourceLocation("flammpfeil.slashblade",name), SlashBlade.getCustomBlade(name),SlashBlade.getCustomBlade("flammpfeil.slashblade.named.wanderer"),new Object[]{
+	    SlashBlade.addRecipe(name, new RecipeAwakeBlade(new ResourceLocation("flammpfeil.slashblade",name), SlashBlade.getCustomBlade(name),SlashBlade.getCustomBlade("flammpfeil.slashblade.named.wanderer"),new Object[]{
 	    		"  I","QI ","BC ",
 	    		Character.valueOf('B'), SlashBlade.getCustomBlade("flammpfeil.slashblade.named.wanderer"),
 	    		Character.valueOf('Q'), "gemQuartz",

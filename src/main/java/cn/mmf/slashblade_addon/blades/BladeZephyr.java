@@ -1,8 +1,10 @@
 package cn.mmf.slashblade_addon.blades;
 
+import cn.mmf.slashblade_addon.SJAP;
 import cn.mmf.slashblade_addon.item.ItemLoader;
-import cn.mmf.slashblade_addon.recipes.RecipeAwakeBladeSJAP;
+import cn.mmf.slashblade_addon.recipes.InfusionRecipeSlashBlade;
 import mods.flammpfeil.slashblade.ItemSlashBladeNamed;
+import mods.flammpfeil.slashblade.RecipeAwakeBlade;
 import mods.flammpfeil.slashblade.SlashBlade;
 import mods.flammpfeil.slashblade.item.ItemSlashBlade;
 import mods.flammpfeil.slashblade.named.event.LoadEvent.InitEvent;
@@ -15,7 +17,6 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
-import thaumcraft.api.crafting.InfusionRecipe;
 import thaumcraft.api.items.ItemsTC;
 import thaumcraft.common.config.ConfigItems;
 import thaumcraft.common.lib.enchantment.EnumInfusionEnchantment;
@@ -61,17 +62,19 @@ public class BladeZephyr {
 	public void InitRecipes(PostInitEvent event){
 		 ItemStack soul = SlashBlade.findItemStack("flammpfeil.slashblade", SlashBlade.ProudSoulStr, 1);
 		 ItemStack sphere = SlashBlade.findItemStack("flammpfeil.slashblade", SlashBlade.SphereBladeSoulStr, 1);
-		ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(namewindeater), 
-				new InfusionRecipe("WINDEATER", SlashBlade.getCustomBlade(namewindeater), 1,
+		 ItemStack isESW = new ItemStack(ItemsTC.elementalSword,1,32767);
+		 EnumInfusionEnchantment.addInfusionEnchantment(isESW, EnumInfusionEnchantment.ARCING, 2);
+		 ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(SJAP.MODID,namewindeater), 
+				new InfusionRecipeSlashBlade("WINDEATER", SlashBlade.getCustomBlade(namewindeater), 1,
 						new AspectList().add(Aspect.AIR, 8).add(Aspect.AVERSION, 8).add(Aspect.ENERGY, 8)
-						,ItemsTC.elementalSword,
+						,isESW,
 						new Object[]{
 								ConfigItems.AIR_CRYSTAL, soul,"oreDiamond", soul, sphere, soul,"bone", soul 
 		}));
 		ItemStack ReqBlade = SlashBlade.getCustomBlade(namewindeater);
 	    NBTTagCompound tag = ItemSlashBlade.getItemTagCompound(ReqBlade);
 	    ItemSlashBlade.KillCount.set(tag, Integer.valueOf(100));
-	    SlashBlade.addRecipe(name, new RecipeAwakeBladeSJAP(new ResourceLocation("flammpfeil.slashblade",name), SlashBlade.getCustomBlade(name), ReqBlade, new Object[]{
+	    SlashBlade.addRecipe(name, new RecipeAwakeBlade(new ResourceLocation("flammpfeil.slashblade",name), SlashBlade.getCustomBlade(name), ReqBlade, new Object[]{
 	    		" X ", "XBX", " X ", Character.valueOf('X'), soul, Character.valueOf('B'), ReqBlade
 	    }));
 	}

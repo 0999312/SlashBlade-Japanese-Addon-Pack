@@ -26,7 +26,7 @@ public class CommonProxy {
     	new EntityLoader();
 
     	if(Loader.isModLoaded(Thaumcraft.MODID)){
-   		 ThaumcraftApi.registerResearchLocation(new ResourceLocation(SlashBlade.modid+":research/research.json"));
+   		 ThaumcraftApi.registerResearchLocation(new ResourceLocation(SlashBlade.modid,"research/research.json"));
     	}
     }
 
@@ -34,4 +34,4 @@ public class CommonProxy {
     {
 
     }
-	}
+}

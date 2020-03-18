@@ -50,14 +50,12 @@ public class RenderPhantomSwordEx extends Render<EntityPhantomSwordEx>
 		3, 9, 6,
 	};
 
-    public RenderPhantomSwordEx(RenderManager renderManager)
-	{
+    public RenderPhantomSwordEx(RenderManager renderManager) {
         super(renderManager);
     }
 
     @Override
-    public void doRender(EntityPhantomSwordEx entity, double x, double y, double z, float entityYaw, float partialTicks)
-    {
+    public void doRender(EntityPhantomSwordEx entity, double x, double y, double z, float entityYaw, float partialTicks) {
 		GL11.glPushAttrib(GL11.GL_CURRENT_BIT |
 						  GL11.GL_ENABLE_BIT |
 						  GL11.GL_LIGHTING_BIT |
@@ -99,8 +97,7 @@ public class RenderPhantomSwordEx extends Render<EntityPhantomSwordEx>
     }
 
     @Override
-	protected ResourceLocation getEntityTexture(EntityPhantomSwordEx entity)
-	{
+	protected ResourceLocation getEntityTexture(EntityPhantomSwordEx entity) {
         return null;
     }
 	

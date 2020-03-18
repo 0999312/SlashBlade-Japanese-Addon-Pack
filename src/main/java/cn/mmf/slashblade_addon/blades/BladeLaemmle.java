@@ -1,7 +1,7 @@
 package cn.mmf.slashblade_addon.blades;
 
-import cn.mmf.slashblade_addon.recipes.RecipeAwakeBladeSJAP;
 import mods.flammpfeil.slashblade.ItemSlashBladeNamed;
+import mods.flammpfeil.slashblade.RecipeAwakeBlade;
 import mods.flammpfeil.slashblade.SlashBlade;
 import mods.flammpfeil.slashblade.item.ItemSlashBlade;
 import mods.flammpfeil.slashblade.named.event.LoadEvent.InitEvent;
@@ -39,7 +39,7 @@ public class BladeLaemmle {
 	public void InitRecipes(PostInitEvent event){
 	    ItemStack required = SlashBlade.getCustomBlade("flammpfeil.slashblade.named.muramasa");
 		ItemStack potion = PotionUtils.addPotionToItemStack(new ItemStack(Items.POTIONITEM),PotionTypes.STRONG_STRENGTH);
-		SlashBlade.addRecipe(name, new RecipeAwakeBladeSJAP(new ResourceLocation("flammpfeil.slashblade",name), SlashBlade.getCustomBlade(name),required, new Object[]{
+		SlashBlade.addRecipe(name, new RecipeAwakeBlade(new ResourceLocation("flammpfeil.slashblade",name), SlashBlade.getCustomBlade(name),required, new Object[]{
 				 "XGO", "GBG", "QGX", Character.valueOf('X'), potion, Character.valueOf('G'),"ingotGold", Character.valueOf('O'), "obsidian", Character.valueOf('Q'),"blockQuartz", Character.valueOf('B'), required 
 		}));
 	}

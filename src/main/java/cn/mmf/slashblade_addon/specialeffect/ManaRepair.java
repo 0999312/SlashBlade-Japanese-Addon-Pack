@@ -9,8 +9,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
+import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.relauncher.ReflectionHelper;
 import vazkii.botania.common.block.tile.mana.TilePool;
 
 public class ManaRepair implements ISpecialEffect
@@ -23,7 +23,7 @@ public class ManaRepair implements ISpecialEffect
   {
     try
     {
-      EntityBladeStand stand = (EntityBladeStand)ReflectionHelper.getPrivateValue(SlashBladeEvent.OnEntityBladeStandUpdateEvent.class, event, new String[] { "entityBladeStand" });
+      EntityBladeStand stand = (EntityBladeStand)ObfuscationReflectionHelper.getPrivateValue(SlashBladeEvent.OnEntityBladeStandUpdateEvent.class, event, "entityBladeStand");
       if (!stand.hasBlade()) {
         return;
       }

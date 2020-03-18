@@ -1,7 +1,9 @@
 package cn.mmf.slashblade_addon.blades;
 
-import cn.mmf.slashblade_addon.recipes.RecipeAwakeBladeSJAP;
+import cn.mcmod.sakura.block.BlockLoader;
+import cn.mcmod.sakura.item.ItemLoader;
 import mods.flammpfeil.slashblade.ItemSlashBladeNamed;
+import mods.flammpfeil.slashblade.RecipeAwakeBlade;
 import mods.flammpfeil.slashblade.SlashBlade;
 import mods.flammpfeil.slashblade.item.ItemSlashBlade;
 import mods.flammpfeil.slashblade.named.event.LoadEvent.InitEvent;
@@ -11,6 +13,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 public class BladeBamboo {
@@ -31,12 +34,13 @@ public class BladeBamboo {
 
 	@SubscribeEvent
 	public void InitRecipes(PostInitEvent event){
-		ItemStack ingot = SlashBlade.findItemStack("flammpfeil.slashblade", SlashBlade.IngotBladeSoulStr, 1);
 	    ItemStack soul = SlashBlade.findItemStack("flammpfeil.slashblade", SlashBlade.ProudSoulStr, 1);
 
-	    SlashBlade.addRecipe(namekatana, new RecipeAwakeBladeSJAP(new ResourceLocation("flammpfeil.slashblade",namekatana), SlashBlade.getCustomBlade(namekatana), SlashBlade.getCustomBlade(namekatana+"_noSheath"),new Object[]{
-				"RIS", "IW ", "B  ", Character.valueOf('S'), soul, Character.valueOf('B'), Items.IRON_SWORD,Character.valueOf('W'), SlashBlade.findItemStack(SlashBlade.modid,"slashbladeWrapper",1)
-				,'R',"dyeRed",'I',ingot
+	    SlashBlade.addRecipe(namekatana, new RecipeAwakeBlade(new ResourceLocation("flammpfeil.slashblade",namekatana), SlashBlade.getCustomBlade(namekatana), SlashBlade.getCustomBlade("slashbladeWrapper"),new Object[]{
+				"  S", " W ", "B  ",
+				Character.valueOf('S'), soul,
+				Character.valueOf('B'), ItemLoader.SAKURAKATANA,
+				Character.valueOf('W'), SlashBlade.findItemStack(SlashBlade.modid,"slashbladeWrapper",1)
 		}));
 	}
 	@SubscribeEvent
@@ -52,12 +56,15 @@ public class BladeBamboo {
         ItemSlashBlade.RepairCount.set(reqTag1,1);
 	    ItemStack fox = SlashBlade.findItemStack(SlashBlade.modid,nameWhite, 1);
 
-	    SlashBlade.addRecipe(nameWhite, new RecipeAwakeBladeSJAP(new ResourceLocation(SlashBlade.modid,nameWhite),fox, foxbladeReqired,
+	    ItemStack wheat = (Loader.isModLoaded("tofucraft"))
+	    		?SlashBlade.findItemStack("tofucraft","foodset", 1):new ItemStack(Items.WHEAT,1);
+	    		if((Loader.isModLoaded("tofucraft")))wheat.setItemDamage(10);
+	    SlashBlade.addRecipe(nameWhite, new RecipeAwakeBlade(new ResourceLocation(SlashBlade.modid,nameWhite),fox, foxbladeReqired,
 	    		new Object[]{"DAD", "DBD", "DHD",
-	    				Character.valueOf('H'), new ItemStack(Items.WHEAT,1),
+	    				Character.valueOf('H'), wheat,
 	    				Character.valueOf('A'), SlashBlade.findItemStack(SlashBlade.modid,SlashBlade.ProudSoulStr,1),
 	    				Character.valueOf('B'), foxbladeReqired,
-	    				Character.valueOf('D'), SlashBlade.findItemStack(SlashBlade.modid,SlashBlade.SphereBladeSoulStr,1)
+	    				Character.valueOf('D'), BlockLoader.KITUNEBI
 	    		}));
 
 	    ItemStack foxblade2Reqired =SlashBlade.getCustomBlade(namekatana);
@@ -67,12 +74,12 @@ public class BladeBamboo {
         ItemSlashBlade.ProudSoul.set(reqTag2,1000);
         ItemSlashBlade.RepairCount.set(reqTag2,1);
 	    ItemStack fox2 = SlashBlade.findItemStack(SlashBlade.modid,"flammpfeil.slashblade.named.fox.black", 1);
-	    SlashBlade.addRecipe(nameBlack, new RecipeAwakeBladeSJAP(new ResourceLocation(SlashBlade.modid,nameBlack),fox2, foxblade2Reqired,
+	    SlashBlade.addRecipe(nameBlack, new RecipeAwakeBlade(new ResourceLocation(SlashBlade.modid,nameBlack),fox2, foxblade2Reqired,
 	    		new Object[]{"DAD", "DBD", "DHD",
-	    				Character.valueOf('H'), new ItemStack(Items.WHEAT,1),
+	    				Character.valueOf('H'), wheat,
 	    				Character.valueOf('A'), SlashBlade.findItemStack(SlashBlade.modid,SlashBlade.ProudSoulStr,1),
-	    				Character.valueOf('B'), foxblade2Reqired,
-	    				Character.valueOf('D'), SlashBlade.findItemStack(SlashBlade.modid,SlashBlade.SphereBladeSoulStr,1)
+	    				Character.valueOf('B'), foxbladeReqired,
+	    				Character.valueOf('D'), BlockLoader.KITUNEBI
 	    		}));
 	}
 }

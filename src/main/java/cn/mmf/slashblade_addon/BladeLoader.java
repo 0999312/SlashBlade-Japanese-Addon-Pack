@@ -1,5 +1,6 @@
 package cn.mmf.slashblade_addon;
 
+import cn.mcmod.sakura.SakuraMain;
 import cn.mmf.slashblade_addon.blades.BladeBamboo;
 import cn.mmf.slashblade_addon.blades.BladeBladeMaster;
 import cn.mmf.slashblade_addon.blades.BladeCS2Template;
@@ -32,8 +33,7 @@ public class BladeLoader {
 		SlashBlade.InitEventBus.register(new BladeNihil());
 		if(ConfigLoader.switch_DarkRaven)
 		SlashBlade.InitEventBus.register(new BladeDarkRaven());
-		if(ConfigLoader.switch_WA)
-		SlashBlade.InitEventBus.register(new BladeWA());
+		
 		if(ConfigLoader.switch_Toyako)
 		SlashBlade.InitEventBus.register(new BladeToyako());
 		if(ConfigLoader.switch_FluorescentBar)
@@ -67,12 +67,18 @@ public class BladeLoader {
 			SlashBlade.InitEventBus.register(new BladeWandererRF());
 			}
 		}
-		if(ConfigLoader.switch_Bamboo)
-		SlashBlade.InitEventBus.register(new BladeBamboo());
-		
+
 		if(Loader.isModLoaded(Thaumcraft.MODID)){
 		if(ConfigLoader.switch_Zephyr)
-		SlashBlade.InitEventBus.register(new BladeZephyr());}
+		SlashBlade.InitEventBus.register(new BladeZephyr());
+		}
+		if(Loader.isModLoaded(SakuraMain.MODID)){
+			if(ConfigLoader.switch_WA)
+				SlashBlade.InitEventBus.register(new BladeWA());
+			if(ConfigLoader.switch_Bamboo)
+				SlashBlade.InitEventBus.register(new BladeBamboo());
+				
+		}
 	}
-	
+
 }

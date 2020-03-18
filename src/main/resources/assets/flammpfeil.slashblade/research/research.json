@@ -17,8 +17,8 @@
             {
                "text" : "research.WINDEATER.text.stage.2",
                "recipes" : [
-                  "minecraft:flammpfeil.slashblade.named.windeater",
-                  "minecraft:flammpfeil.slashblade.named.zephyr"
+                  "slashblade_addon:flammpfeil.slashblade.named.windeater",
+                  "flammpfeil.slashblade:flammpfeil.slashblade.named.zephyr"
                ]
             }
          ]

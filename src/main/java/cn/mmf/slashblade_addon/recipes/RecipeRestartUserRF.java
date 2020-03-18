@@ -1,12 +1,13 @@
 package cn.mmf.slashblade_addon.recipes;
 
 import cn.mmf.slashblade_addon.item.ItemSlashBladeRF;
+import mods.flammpfeil.slashblade.RecipeAwakeBlade;
 import mods.flammpfeil.slashblade.item.ItemSlashBlade;
 import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 
-public class RecipeRestartUserRF extends RecipeAwakeBladeSJAP{
+public class RecipeRestartUserRF extends RecipeAwakeBlade{
 
 	public RecipeRestartUserRF(ResourceLocation loc, ItemStack result, ItemStack requiredStateBlade, Object[] recipe) {
 		super(loc, result, requiredStateBlade, recipe);

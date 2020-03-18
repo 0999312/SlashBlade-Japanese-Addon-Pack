@@ -8,7 +8,7 @@ import net.minecraft.init.SoundEvents;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.relauncher.ReflectionHelper;
+import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 
 public class EntityAquaEdge extends EntityDriveEx
 {
@@ -29,18 +29,13 @@ public class EntityAquaEdge extends EntityDriveEx
 	}
 
 	@Override
-	public void setInitialPosition(double x, double y, double z,
-								   float yaw, float pitch, float roll,
-								   float speed)
-	{
+	public void setInitialPosition(double x, double y, double z, float yaw, float pitch, float roll, float speed){
 		super.setInitialPosition(x, y, z, yaw, pitch, roll, speed);
-
 		setPosition(posX + motionX, posY + motionY, posZ + motionZ);
 	}
 
 	@Override
-	protected boolean onImpact(Entity target, float damage)
-	{
+	protected boolean onImpact(Entity target, float damage) {
 		return onImpact(target, damage, "drown");
 	}
 
@@ -51,10 +46,10 @@ public class EntityAquaEdge extends EntityDriveEx
 
 		super.onImpact(target, damage, ds);
     
-		ReflectionHelper.setPrivateValue(Entity.class,
+		ObfuscationReflectionHelper.setPrivateValue(Entity.class,
 										 target,
 										 true,
-										 "field_70171_ac", "inWater");
+										 "field_70171_ac");
     
 		if (target.isBurning()) {
 			target.playSound(SoundEvents.ENTITY_GENERIC_EXTINGUISH_FIRE,
@@ -63,9 +58,8 @@ public class EntityAquaEdge extends EntityDriveEx
 			target.extinguish();
 
 			try {
-				ReflectionHelper.findMethod(
-					Entity.class,
-					"setFlag", "func_70052_a",
+				ObfuscationReflectionHelper.findMethod(
+					Entity.class, "func_70052_a",
 					int.class, boolean.class).invoke(target, 0, false);
 			} catch (IllegalAccessException ex) {
 				throw new RuntimeException(ex);

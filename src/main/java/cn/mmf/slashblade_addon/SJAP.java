@@ -7,11 +7,9 @@ import net.minecraftforge.fml.common.Mod.Instance;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import thaumcraft.Thaumcraft;
 
-import mods.flammpfeil.slashblade.SlashBlade;
-
-@Mod(modid = SJAP.MODID, name = SJAP.NAME, version = SJAP.VERSION,dependencies="required-after:"+ SlashBlade.modid+";"+"after:"+Thaumcraft.MODID+";")
+//
+@Mod(modid = SJAP.MODID, name = SJAP.NAME, version = SJAP.VERSION,dependencies="required-after:flammpfeil.slashblade@[mc1.12-r32,);after:thaumcraft;after:sakura@[V0.0.9-MC1.12.2,);")
 public class SJAP
 {
     public static final String MODID = "slashblade_addon";

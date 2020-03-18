@@ -1,8 +1,8 @@
 package cn.mmf.slashblade_addon.blades;
 
-import cn.mmf.slashblade_addon.recipes.RecipeAwakeBladeSJAP;
 import cn.mmf.slashblade_addon.recipes.RecipeNihil;
 import mods.flammpfeil.slashblade.ItemSlashBladeNamed;
+import mods.flammpfeil.slashblade.RecipeAwakeBlade;
 import mods.flammpfeil.slashblade.SlashBlade;
 import mods.flammpfeil.slashblade.item.ItemSlashBlade;
 import mods.flammpfeil.slashblade.named.event.LoadEvent.InitEvent;
@@ -159,7 +159,7 @@ public class BladeNihil {
 		ItemStack reqblade_nl=new ItemStack(SlashBlade.weapon);
 		reqblade_nl.setItemDamage(Short.MAX_VALUE);
 		
-		SlashBlade.addRecipe(namenl, new RecipeAwakeBladeSJAP(new ResourceLocation("flammpfeil.slashblade",namenl), nihil, reqblade_nl
+		SlashBlade.addRecipe(namenl, new RecipeAwakeBlade(new ResourceLocation("flammpfeil.slashblade",namenl), nihil, reqblade_nl
 				, new Object[]{
 						"SIS","IBI","SIS",'I',ingot,'S',sphere,'B',reqblade_nl
 				}));
@@ -171,7 +171,7 @@ public class BladeNihil {
 	    if (tag_ex.hasKey("ench")) {
 	      tag_ex.removeTag("ench");
 	    }
-		SlashBlade.addRecipe(nameex, new RecipeAwakeBladeSJAP(new ResourceLocation("flammpfeil.slashblade",nameex), nihilex, reqblade_ex
+		SlashBlade.addRecipe(nameex, new RecipeAwakeBlade(new ResourceLocation("flammpfeil.slashblade",nameex), nihilex, reqblade_ex
 				, new Object[]{
 						"SNS","IBI","SDS", 'S', sphere, 'I', ingot, 'B', reqblade_ex, 'N', Items.NETHER_STAR, 'D', "blockDiamond"
 				}));
