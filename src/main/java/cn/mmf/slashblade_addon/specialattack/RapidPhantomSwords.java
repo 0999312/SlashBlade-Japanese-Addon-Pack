@@ -2,16 +2,13 @@ package cn.mmf.slashblade_addon.specialattack;
 
 import java.util.Random;
 
-import cn.mmf.slashblade_addon.MathUtil;
+import cn.mcmod_mmf.mmlib.util.MathUtil;
 import cn.mmf.slashblade_addon.entity.EntityPhantomSwordEx;
 import mods.flammpfeil.slashblade.ability.StylishRankManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 
-/**
- * 鎬ヨゲ骞诲奖鍓�
- */
 public class RapidPhantomSwords extends PhantomSwordsBase
 {
 	public static String AttackType = StylishRankManager.AttackTypes.registerAttackType("RapidPhantomSwords", 0.5F);
@@ -39,11 +36,11 @@ public class RapidPhantomSwords extends PhantomSwordsBase
 			entity.setLifeTime(30);
 			entity.setTargetEntityId(targetId);
 
-			double d = rnd.nextDouble()*2.0 - 1.0;	// -1 銆� 1
+			double d = rnd.nextDouble()*2.0 - 1.0;
 
-			double x = 2.0 * d * MathUtil.cos(player.rotationYaw);
+			double x = 2.0 * d * MathUtil.getInstance().cos(player.rotationYaw);
 			double y = 2.0 * (1.0 - Math.abs(d)) + 0.5;
-			double z = 2.0 * d * MathUtil.sin(player.rotationYaw);
+			double z = 2.0 * d * MathUtil.getInstance().sin(player.rotationYaw);
 			
 			entity.setInitialPosition(
 				player.posX + x,

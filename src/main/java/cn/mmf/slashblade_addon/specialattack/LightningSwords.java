@@ -2,7 +2,7 @@ package cn.mmf.slashblade_addon.specialattack;
 
 import java.util.Random;
 
-import cn.mmf.slashblade_addon.MathUtil;
+import cn.mcmod_mmf.mmlib.util.MathUtil;
 import cn.mmf.slashblade_addon.entity.EntityLightningSword;
 import cn.mmf.slashblade_addon.entity.EntityPhantomSwordEx;
 import mods.flammpfeil.slashblade.ability.StylishRankManager;
@@ -41,9 +41,9 @@ public class LightningSwords extends PhantomSwordsBase
 
 			final float rot = rotUnit*i;
 			
-			double x = -2.0*MathUtil.sin(rot);
+			double x = -2.0*MathUtil.getInstance().sin(rot);
 			double y =  2.0*(1.0 + rnd.nextDouble()) + 0.5;
-			double z =  2.0*MathUtil.cos(rot);
+			double z =  2.0*MathUtil.getInstance().cos(rot);
 
 			entity.setInitialPosition(
 				target.posX + x,

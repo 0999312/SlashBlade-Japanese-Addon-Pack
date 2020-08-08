@@ -2,7 +2,7 @@ package cn.mmf.slashblade_addon.entity;
 
 import java.util.List;
 
-import cn.mmf.slashblade_addon.MathUtil;
+import cn.mcmod_mmf.mmlib.util.MathUtil;
 import cn.mmf.slashblade_addon.specialattack.PhantomSwordsBase;
 import mods.flammpfeil.slashblade.ability.StylishRankManager;
 import mods.flammpfeil.slashblade.entity.selector.EntitySelectorAttackable;
@@ -15,8 +15,7 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 
-public class EntityPhantomSwordEx extends EntityBase
-{
+public class EntityPhantomSwordEx extends EntityBase{
 
     private Entity stuckEntity_ = null;	
 
@@ -160,9 +159,9 @@ public class EntityPhantomSwordEx extends EntityBase
 		final Entity entity = stuckEntity_;
 
 		float r = entity.rotationYaw - hitBaseYaw_;
-		double x = entity.posX + hitX_*MathUtil.cos(r) - hitZ_*MathUtil.sin(r);
+		double x = entity.posX + hitX_*MathUtil.getInstance().cos(r) - hitZ_*MathUtil.getInstance().sin(r);
 		double y = entity.posY + hitY_;
-		double z = entity.posZ + hitX_*MathUtil.sin(r) + hitZ_*MathUtil.cos(r);
+		double z = entity.posZ + hitX_*MathUtil.getInstance().sin(r) + hitZ_*MathUtil.getInstance().cos(r);
 
 		float pitch = entity.rotationPitch + hitPitch_;
 		float yaw = entity.rotationYaw + hitYaw_;

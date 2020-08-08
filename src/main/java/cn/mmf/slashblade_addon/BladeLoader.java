@@ -20,7 +20,6 @@ import cn.mmf.slashblade_addon.blades.BladeWandererRF;
 import cn.mmf.slashblade_addon.blades.BladeYukari;
 import cn.mmf.slashblade_addon.blades.BladeZephyr;
 import cn.mmf.slashblade_addon.specialattack.SAloader;
-import cofh.CoFHCore;
 import mods.flammpfeil.slashblade.SlashBlade;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -52,21 +51,19 @@ public class BladeLoader {
 		SlashBlade.InitEventBus.register(new BladeBladeMaster());
 		if(ConfigLoader.switch_CS2)
 		SlashBlade.InitEventBus.register(new BladeCS2Template());
-		if(Loader.isModLoaded(CoFHCore.MOD_ID)){
 		if(ConfigLoader.switch_MURASAMA)
 		SlashBlade.InitEventBus.register(new BladeMURASAMA());
-		}
+		
 		if(Loader.isModLoaded("botania")){
 		if(ConfigLoader.switch_Terra)
 		SlashBlade.InitEventBus.register(new BladeTerra());
 		}
 		if(ConfigLoader.switch_Wanderer){
-		SlashBlade.InitEventBus.register(new BladeWanderer());
-		if(Loader.isModLoaded(CoFHCore.MOD_ID)){
+			SlashBlade.InitEventBus.register(new BladeWanderer());
 			if(ConfigLoader.switch_MURASAMA)
-			SlashBlade.InitEventBus.register(new BladeWandererRF());
-			}
+				SlashBlade.InitEventBus.register(new BladeWandererRF());
 		}
+		
 
 		if(Loader.isModLoaded(Thaumcraft.MODID)){
 		if(ConfigLoader.switch_Zephyr)

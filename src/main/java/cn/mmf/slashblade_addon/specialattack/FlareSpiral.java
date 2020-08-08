@@ -2,7 +2,7 @@ package cn.mmf.slashblade_addon.specialattack;
 
 import java.util.List;
 
-import cn.mmf.slashblade_addon.MathUtil;
+import cn.mcmod_mmf.mmlib.util.MathUtil;
 import cn.mmf.slashblade_addon.entity.EntityFlareEdge;
 import mods.flammpfeil.slashblade.ability.StylishRankManager;
 import mods.flammpfeil.slashblade.entity.selector.EntitySelectorAttackable;
@@ -85,13 +85,13 @@ public class FlareSpiral extends SpecialAttackBase
 				final float rot = rotUnit*i;
 
 				float yaw = player.rotationYaw + rot;
-				float pitch = -30*MathUtil.cos(rot - 60);
+				float pitch = -30*(float)MathUtil.getInstance().cos(rot - 60);
 				if (pitch > 0.0f)
 					pitch = 1.0f;
 				
-				double x = MathUtil.cos(yaw);
-				double y = 0.7*MathUtil.sin(rot - 60);
-				double z = MathUtil.sin(yaw);
+				double x = MathUtil.getInstance().cos(yaw);
+				double y = 0.7*MathUtil.getInstance().sin(rot - 60);
+				double z = MathUtil.getInstance().sin(yaw);
 				
 				entity.setInitialPosition(
 					player.posX + x,
@@ -99,7 +99,7 @@ public class FlareSpiral extends SpecialAttackBase
 					player.posZ + z,
 					yaw,
 					pitch,
-					90.0f - 30.0f*MathUtil.cos(rot + 30),
+					90.0f - 30.0f*(float)MathUtil.getInstance().cos(rot + 30),
 					0.3f);
 
 				world.spawnEntity(entity);

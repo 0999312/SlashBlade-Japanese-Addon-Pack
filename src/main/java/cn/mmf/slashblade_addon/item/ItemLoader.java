@@ -1,7 +1,6 @@
 package cn.mmf.slashblade_addon.item;
 
 import cn.mmf.slashblade_addon.ConfigLoader;
-import cofh.CoFHCore;
 import mods.flammpfeil.slashblade.SlashBlade;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
@@ -15,8 +14,7 @@ public class ItemLoader {
 	public static Item rfblade,tcblade;
 	
 	public ItemLoader(FMLPreInitializationEvent event) {
-		if(Loader.isModLoaded(CoFHCore.MOD_ID)){
-		if(ConfigLoader.switch_MURASAMA)
+		if(ConfigLoader.switch_MURASAMA){
 			rfblade = new ItemSlashBladeRF(ToolMaterial.IRON, 4.0F).setUnlocalizedName("slashBlade_RF");
 			register(FPNCore);
 			register(rfblade);

@@ -11,7 +11,7 @@ apply plugin: 'net.minecraftforge.gradle.forge'
 
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 
-version = "1.3.0"
+version = "1.5.0"
 group = "cn.mmf"
 archivesBaseName = "SJAP"
 
@@ -102,8 +102,7 @@ repositories {
     url = "modmaven.k-4u.nl"
 	}
     maven {
-        name = "CurseForge"
-        url = "https://minecraft.curseforge.com/api/maven/"
+        url = "https://www.cursemaven.com"
     }
 
 }
@@ -111,27 +110,20 @@ repositories {
 dependencies {
 	configurations.all {
 		resolutionStrategy {
-			force 'mezz.jei:jei_1.12.2:4.14.3.242'
+			force 'mezz.jei:jei_1.12.2:4.14.3.238'
 		}
 	}
 	// compile against the JEI API but do not include it at runtime
-    deobfProvided ("mezz.jei:jei_1.12.2:4.14.3.242:api"){
+    deobfProvided ("mezz.jei:jei_1.12.2:4.14.3.238:api"){
 	force = true
 	}
     // at runtime, use the full JEI jar
-    runtime ("mezz.jei:jei_1.12.2:4.14.3.242"){
+    runtime ("mezz.jei:jei_1.12.2:4.14.3.238"){
 	force = true
 	}
-	
-	deobfCompile "baubles:Baubles:1.12:1.5.2"
+	deobfCompile "curse.maven:baubles:2518667"
     compile "vazkii.patchouli:Patchouli:1.0-16.84"
 	deobfCompile "vazkii.botania:Botania:r1.10-357.7"
-	deobfCompile "thaumcraft:Thaumcraft:1.12.2:6.1.BETA26"
-	deobfCompile "the-twilight-forest:twilightforest-1.12.2:3.8.689:universal"
-	deobfCompile "cofh:RedstoneFlux:1.12-2.1.0.6:universal"
-	deobfCompile "cofh:CoFHCore:1.12.2-4.6.1.22:universal"
-	deobfCompile "cofh:CoFHWorld:1.12.2-1.3.0.6:universal"
-	deobfCompile "codechicken:CodeChickenLib:1.12.2-3.2.2.354:universal"
-	deobfCompile "cofh:ThermalFoundation:1.12.2-2.6.1.22:universal"
-	deobfCompile "cofh:ThermalExpansion:1.12.2-5.5.2.39:universal"
+	deobfCompile "curse.maven:thaumcraft:2629023"
+	deobfCompile "curse.maven:the-twilight-forest:2818055"
 }

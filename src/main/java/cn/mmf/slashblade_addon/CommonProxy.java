@@ -9,17 +9,24 @@ import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.network.NetworkRegistry;
+import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
+import net.minecraftforge.fml.relauncher.Side;
 import thaumcraft.Thaumcraft;
 import thaumcraft.api.ThaumcraftApi;
 
 
 public class CommonProxy {
-	public void preInit(FMLPreInitializationEvent event)
-	{
+    private static final SimpleNetworkWrapper network = NetworkRegistry.INSTANCE.newSimpleChannel(SJAP.MODID);
+    public static SimpleNetworkWrapper getNetwork() {
+        return network;
+    }
+	public void preInit(FMLPreInitializationEvent event){
 		 new ConfigLoader(event);	
 		 new SELoader();
 		 new ItemLoader(event);
 		 new BladeLoader(event);
+		 network.registerMessage(new PacketKeyMessageHandler(),PacketKeyMessage.class,0,Side.SERVER);
 	}
     public void init(FMLInitializationEvent event)
     { 
